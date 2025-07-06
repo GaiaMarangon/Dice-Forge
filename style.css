@@ -3,7 +3,7 @@
     --primary-color: #2c1810;
     --secondary-color: #8b4513;
     --accent-color: #d4af37;
-    --background-color: var(--light-text);
+    --background-color: #f4f1e8;
     --text-color: #2c1810;
     --card-bg: #ffffff;
     --light-text: #f4f1e8;
@@ -263,6 +263,40 @@ body {
     line-height: 1.2;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
     color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.title-base {
+    font-size: 1em;
+    color: var(--accent-color);
+}
+
+.title-dynamic {
+    font-size: 1.2em;
+    color: var(--light-text);
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: capitalize;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: none;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+    }
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(3px 3px 8px rgba(212, 175, 55, 0.6));
+    }
 }
 
 .hero p {
@@ -745,6 +779,11 @@ footer {
         font-size: 2.5rem;
     }
 
+    .title-dynamic {
+        font-size: 1.3em;
+        letter-spacing: 1px;
+    }
+
     .hero-image {
         margin-top: 2rem;
     }
@@ -777,6 +816,11 @@ footer {
 @media screen and (max-width: 480px) {
     .hero h1 {
         font-size: 2rem;
+    }
+
+    .title-dynamic {
+        font-size: 1.2em;
+        letter-spacing: 0.5px;
     }
 
     .portfolio h2,

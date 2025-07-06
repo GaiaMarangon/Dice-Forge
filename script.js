@@ -168,8 +168,11 @@ function setRandomTitle() {
         // Update navigation title
         document.getElementById('nav-title').innerHTML = `⚀ ${title}`;
         
-        // Update hero title
-        document.getElementById('hero-title').textContent = title;
+        // Update hero title with new structure
+        const dynamicWordElement = document.getElementById('dynamic-word');
+        if (dynamicWordElement) {
+            dynamicWordElement.textContent = randomWord;
+        }
     }
 }
 

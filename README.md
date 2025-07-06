@@ -6,6 +6,8 @@ A modern, responsive portfolio website to showcase handcrafted resin dice sets. 
 
 - **Responsive Design**: Optimized for both desktop and mobile viewing
 - **YAML Configuration**: Easy content management through a single configuration file
+- **Dynamic Title**: Randomly changes on each page load with highlighted text
+- **Theme Switcher**: Multiple color themes (Tavern, Forest, Ocean, Shadow)
 - **Image Galleries**: Showcase individual dice, complete sets, and custom containers
 - **Video Support**: Display showcase videos for each dice set
 - **Contact Form**: Built-in contact functionality
@@ -126,6 +128,14 @@ Then open http://localhost:8000 in your browser.
 - Minimal JavaScript dependencies
 - CSS Grid and Flexbox for efficient layouts
 - Smooth animations with CSS transitions
+
+## Deployment
+
+See [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) for detailed instructions on deploying your site for free on:
+- Netlify (recommended)
+- Vercel 
+- GitHub Pages
+- Surge.sh
 
 ## License
 

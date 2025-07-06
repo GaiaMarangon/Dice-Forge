@@ -171,7 +171,19 @@ function setRandomTitle() {
         // Update hero title with new structure
         const dynamicWordElement = document.getElementById('dynamic-word');
         if (dynamicWordElement) {
+            // Add animation class for feedback
+            dynamicWordElement.classList.add('changing');
+            
+            // Update text
             dynamicWordElement.textContent = randomWord;
+            
+            // Remove animation class after animation completes
+            setTimeout(() => {
+                dynamicWordElement.classList.remove('changing');
+            }, 400);
+            
+            // Add title attribute for accessibility
+            dynamicWordElement.title = "Click to change the forge theme";
         }
     }
 }
@@ -447,6 +459,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.hamburger').addEventListener('click', toggleMobileNav);
     document.querySelector('.close').addEventListener('click', closeModal);
     document.getElementById('contact-form').addEventListener('submit', handleContactForm);
+    
+    // Dynamic title click event listener
+    document.getElementById('dynamic-word').addEventListener('click', function() {
+        setRandomTitle();
+    });
     
     // Theme switcher event listeners
     document.getElementById('theme-switcher').addEventListener('click', openThemeModal);

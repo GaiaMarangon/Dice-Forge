@@ -286,6 +286,20 @@ body {
     text-shadow: none;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
     animation: pulse-glow 3s ease-in-out infinite;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.title-dynamic:hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="%23d4af37" stroke="%232c1810" stroke-width="2"/><circle cx="7" cy="7" r="2" fill="%232c1810"/><circle cx="17" cy="17" r="2" fill="%232c1810"/><circle cx="12" cy="12" r="2" fill="%232c1810"/><circle cx="7" cy="17" r="2" fill="%232c1810"/><circle cx="17" cy="7" r="2" fill="%232c1810"/></svg>'), pointer;
+    transform: scale(1.05);
+    filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
+}
+
+.title-dynamic:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
 }
 
 @keyframes pulse-glow {
@@ -297,6 +311,26 @@ body {
         transform: scale(1.05);
         filter: drop-shadow(3px 3px 8px rgba(212, 175, 55, 0.6));
     }
+}
+
+/* Animation for title change feedback */
+@keyframes title-change {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.title-dynamic.changing {
+    animation: title-change 0.4s ease-in-out;
 }
 
 .hero p {

@@ -160,7 +160,7 @@ function updateSiteImages() {
 function setRandomTitle() {
     if (siteConfig && siteConfig.title_words && siteConfig.title_words.length > 0) {
         const randomWord = siteConfig.title_words[Math.floor(Math.random() * siteConfig.title_words.length)];
-        const title = `The Bazar of ${randomWord}`;
+        const title = `The Forge of ${randomWord}`;
         
         // Update page title
         document.getElementById('site-title').textContent = `${title} - Legendary Resin Dice Sets`;

@@ -1,0 +1,142 @@
+# Dice Collection Configuration
+# Edit this file to customize your portfolio content
+
+# Site Configuration
+site_config:
+  title_words:
+    - "critical hits"
+    - "randomness"
+    - "mysteries"
+    - "unknown"
+    - "dice"
+    - "Partial Differential dicE"
+
+# Color Themes
+color_themes:
+  tavern:
+    name: "Tavern"
+    primary: "#2c1810"
+    secondary: "#8b4513"
+    accent: "#d4af37"
+    background: "#f4f1e8"
+    text: "#2c1810"
+    card_bg: "#ffffff"
+  forest:
+    name: "Enchanted Forest"
+    primary: "#1a3d2e"
+    secondary: "#2d5a3d"
+    accent: "#7fb069"
+    background: "#e8f5e8"
+    text: "#1a3d2e"
+    card_bg: "#ffffff"
+  ocean:
+    name: "Deep Ocean"
+    primary: "#0f2940"
+    secondary: "#1e4d5b"
+    accent: "#3498db"
+    background: "#e3f2fd"
+    text: "#0f2940"
+    card_bg: "#ffffff"
+  shadow:
+    name: "Shadow Realm"
+    primary: "#2c1810"
+    secondary: "#4a148c"
+    accent: "#9c27b0"
+    background: "#1a1a1a"
+    text: "#ffffff"
+    card_bg: "#2d2d2d"
+
+# Site Images
+site_images:
+  hero: "images/hero-tavern.jpg"
+  about: "images/about-craftsman.jpg"
+
+# Contact Information
+contact:
+  email: "your.email@example.com"
+
+# Dice Sets Collection
+dice_sets:
+  - name: "Mystic Ocean Set"
+    description: "Deep blue resin with swirling silver patterns reminiscent of ocean depths. Each die captures the mysterious beauty of the deep sea with metallic inclusions that shimmer like bioluminescent creatures."
+    features:
+      - "Full 7-piece set (d4, d6, d8, d10, d12, d20, d100)"
+      - "Custom ocean-themed container"
+      - "Hand-polished finish"
+      - "Silver metallic numbering"
+    images:
+      main: "images/sets/mystic-ocean/main.jpg"
+      individual: 
+        - "images/sets/mystic-ocean/d20.jpg"
+        - "images/sets/mystic-ocean/d12.jpg"
+        - "images/sets/mystic-ocean/d10.jpg"
+      complete_set: "images/sets/mystic-ocean/complete-set.jpg"
+      container: 
+        - "images/sets/mystic-ocean/container-closed.jpg"
+        - "images/sets/mystic-ocean/container-open.jpg"
+    video: "videos/mystic-ocean-showcase.mp4"
+
+  - name: "Forest Guardian Set"
+    description: "Emerald green with embedded moss-like textures and gold numbering. Inspired by ancient forests and the mystical creatures that dwell within them."
+    features:
+      - "Full 7-piece set"
+      - "Nature-inspired design"
+      - "Gold metallic numbering"
+      - "Organic texture patterns"
+    images:
+      main: "images/sets/forest-guardian/main.jpg"
+      individual: 
+        - "images/sets/forest-guardian/d20.jpg"
+        - "images/sets/forest-guardian/d12.jpg"
+        - "images/sets/forest-guardian/d8.jpg"
+      complete_set: "images/sets/forest-guardian/complete-set.jpg"
+    video: "videos/forest-guardian-showcase.mp4"
+
+  - name: "Volcanic Fire Set"
+    description: "Red and orange swirls with metallic inclusions that catch the light like molten lava. The perfect set for fire-based characters and dramatic campaigns."
+    features:
+      - "Full 7-piece set"
+      - "Custom wooden container"
+      - "Metallic copper finish"
+      - "Heat-resistant resin"
+    images:
+      main: "images/sets/volcanic-fire/main.jpg"
+      individual: 
+        - "images/sets/volcanic-fire/d20.jpg"
+      complete_set: "images/sets/volcanic-fire/complete-set.jpg"
+      container: 
+        - "images/sets/volcanic-fire/wooden-box.jpg"
+        - "images/sets/volcanic-fire/box-interior.jpg"
+    video: "videos/volcanic-fire-showcase.mp4"
+
+  - name: "Starlight Crystal Set"
+    description: "Clear resin with suspended glitter and iridescent flakes that sparkle like stars in the night sky. A truly magical addition to any collection."
+    features:
+      - "Full 7-piece set"
+      - "Holographic glitter inclusions"
+      - "Clear crystal resin"
+      - "Silver numbering"
+    images:
+      main: "images/sets/starlight-crystal/main.jpg"
+      individual: 
+        - "images/sets/starlight-crystal/d20.jpg"
+        - "images/sets/starlight-crystal/d12.jpg"
+      complete_set: "images/sets/starlight-crystal/complete-set.jpg"
+    video: "videos/starlight-crystal-showcase.mp4"
+
+  - name: "Shadow Realm Set"
+    description: "Deep purple and black swirls with silver inclusions. Perfect for rogues, warlocks, and any character who walks in the shadows."
+    features:
+      - "Full 7-piece set"
+      - "Custom black velvet pouch"
+      - "Silver metallic numbering"
+      - "Matte finish option"
+    images:
+      main: "images/sets/shadow-realm/main.jpg"
+      individual: 
+        - "images/sets/shadow-realm/d20.jpg"
+        - "images/sets/shadow-realm/d10.jpg"
+      complete_set: "images/sets/shadow-realm/complete-set.jpg"
+      container: 
+        - "images/sets/shadow-realm/velvet-pouch.jpg"
+    video: "videos/shadow-realm-showcase.mp4"

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="site-title">The Bazar of Dice - Legendary Resin Dice Sets</title>
+    <meta name="description" content="Handcrafted resin dice sets forged with the precision of a master craftsman. Each set tells a story worthy of the greatest adventures.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2 id="nav-title">⚀ The Bazar of Dice</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-switcher" class="theme-button" title="Change Theme">
+                    <span class="theme-icon">🎨</span>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 id="hero-title">Artisan Dice Forge</h1>
+            <p>Handcrafted resin dice sets forged with the precision of a master craftsman</p>
+            <a href="#portfolio" class="cta-button">Browse Collection</a>
+        </div>
+        <div class="hero-image">
+            <div id="hero-image-container" class="placeholder-image">
+                <span>Tavern Hero Image Placeholder</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Legendary Dice Collection</h2>
+            <p class="section-subtitle">Each set forged with ancient techniques and modern artistry</p>
+            
+            <!-- Portfolio Grid -->
+            <div id="portfolio-grid" class="portfolio-grid">
+                <!-- Dice sets will be loaded here from YAML -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>The Craftsman's Tale</h2>
+                    <p>Welcome, traveler, to my workshop where magic and craftsmanship unite. Each dice set is forged with the same care a blacksmith would craft a legendary weapon. From the depths of mystical oceans to the heart of ancient forests, every set tells a story worthy of the greatest adventures.</p>
+                    <p>Whether you're embarking on epic quests or collecting treasures of fine artistry, these dice are your faithful companions, ready to determine fate with honor and beauty.</p>
+                </div>
+                <div class="about-image">
+                    <div id="about-image-container" class="placeholder-image">
+                        <span>Craftsman at Work Placeholder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Send Word to the Forge</h2>
+            <p class="section-subtitle">Seeking custom work or have questions about available treasures?</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📧 Contact the Artisan</h3>
+                        <p id="contact-email">your.email@example.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>⚒️ Custom Commissions</h3>
+                        <p>Available for bespoke dice sets and containers. Share your vision and let's forge something legendary together!</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your quest for the perfect dice..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme Selector Modal -->
+    <div id="theme-modal" class="theme-modal">
+        <div class="theme-modal-content">
+            <span class="theme-close">&times;</span>
+            <h3>Choose Your Theme</h3>
+            <div id="theme-options" class="theme-options">
+                <!-- Theme options will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Dice Set Details -->
+    <div id="dice-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Artisan Dice Forge. Where legends are rolled.</p>
+        </div>
+    </footer>
+
+    <script src="js-yaml.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

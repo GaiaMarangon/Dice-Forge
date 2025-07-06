@@ -1,0 +1,31 @@
+{
+  "name": "resin-dice-portfolio",
+  "version": "1.0.0",
+  "description": "A static portfolio website for showcasing handcrafted resin dice sets",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "deploy": "echo 'Ready for deployment to Netlify, Vercel, or GitHub Pages'"
+  },
+  "keywords": [
+    "dice",
+    "resin",
+    "portfolio",
+    "static-site",
+    "tabletop",
+    "gaming"
+  ],
+  "author": "Dice Artisan",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/resin-dice-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/resin-dice-portfolio/issues"
+  },
+  "homepage": "https://github.com/yourusername/resin-dice-portfolio#readme"
+}

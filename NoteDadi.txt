@@ -1,0 +1,25 @@
+Colorazione del dado:
+- colore singolo
+- colore doppio
+- colore con venature
+
+Inserti:
+- brillantini
+- polvere di mica (effetto metallizzato)
+- inserti di metallo (foglia d'oro/argento/bronzo)
+
+Colori:
+- opachi: bianco, nero
+- fluo: rosa, giallo
+- trasparenti: vari, combinabili per creare colori personalizzati 
+
+Colore dei numeri (singolo o multiplo):
+- oro
+- argento
+- bianco
+
+Contenitore:
+- scrigno
+- scatola lunga
+
+

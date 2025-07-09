@@ -48,8 +48,8 @@ color_themes:
 
 # Site Images
 site_images:
-  hero: "images/hero-tavern.jpg"
-  about: "images/about-craftsman.jpg"
+  hero: "images/forger.jpg"
+  about: "images/forger.jpg"
 
 # Contact Information
 contact:
@@ -57,86 +57,182 @@ contact:
 
 # Dice Sets Collection
 dice_sets:
-  - name: "Mystic Ocean Set"
-    description: "Deep blue resin with swirling silver patterns reminiscent of ocean depths. Each die captures the mysterious beauty of the deep sea with metallic inclusions that shimmer like bioluminescent creatures."
+  - name: "Pink salt gem"
+    description: "Wonderful pink and white dice"
     features:
-      - "Full 7-piece set (d4, d6, d8, d10, d12, d20, d100)"
-      - "Custom ocean-themed container"
-      - "Hand-polished finish"
-      - "Silver metallic numbering"
+      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
+      - "Colors: Crystal pink and solid white"
+      - "Numbering: white"
+      - "Inserts: silver foil"
     images:
-      main: "images/sets/mystic-ocean/main.jpg"
+      main: "images/sets/rosa/set.jpg"
       individual: 
-        - "images/sets/mystic-ocean/d20.jpg"
-        - "images/sets/mystic-ocean/d12.jpg"
-        - "images/sets/mystic-ocean/d10.jpg"
-      complete_set: "images/sets/mystic-ocean/complete-set.jpg"
+        - "images/sets/rosa/d100.jpg"
+        - "images/sets/rosa/d20.jpg"
+        - "images/sets/rosa/d12.jpg"
+        - "images/sets/rosa/d8.jpg"
+        - "images/sets/rosa/d6.jpg"
+        - "images/sets/rosa/d4_1.jpg"
+        - "images/sets/rosa/d4_2.jpg"
+        - "images/sets/rosa/d4_3.jpg"
+      complete_set: "images/sets/rosa/dice.jpg"
+    video: "images/sets/rosa/set.mp4"
+
+  - name: "Shiny leaf"
+    description: "Light green dice glittering with gentle sparkles."
+    features:
+      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
+      - "Colors: Crystal light green"
+      - "Numbering: white"
+      - "Inserts: small golden glitters"
+    images:
+      main: "images/sets/verdeBrillantini/set.jpg"
+      individual: 
+        - "images/sets/verdeBrillantini/d100.jpg"
+        - "images/sets/verdeBrillantini/d20.jpg"
+        - "images/sets/verdeBrillantini/d12.jpg"
+        - "images/sets/verdeBrillantini/d8.jpg"
+        - "images/sets/verdeBrillantini/d6.jpg"
+        - "images/sets/verdeBrillantini/d4_1.jpg"
+        - "images/sets/verdeBrillantini/d4_2.jpg"
+        - "images/sets/verdeBrillantini/d4_3.jpg"
+      complete_set: "images/sets/verdeBrillantini/dice.jpg"
       container: 
-        - "images/sets/mystic-ocean/container-closed.jpg"
-        - "images/sets/mystic-ocean/container-open.jpg"
-    video: "videos/mystic-ocean-showcase.mp4"
+        - "images/sets/verdeBrillantini/coffer_closedFront.jpg"
+        - "images/sets/verdeBrillantini/coffer_openDiceFront.jpg"
+    video: "images/sets/verdeBrillantini/set.mp4" 
+
+  - name: "Bloody Ink"
+    description: "Bloody-red dice with black inky shades."
+    features:
+      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
+      - "Colors: Crystal red with solid black shades"
+      - "Numbering: golden"
+    images:
+      main: "images/sets/rossoNero/set.jpg"
+      individual: 
+        - "images/sets/rossoNero/d100.jpg"
+        - "images/sets/rossoNero/d20.jpg"
+        - "images/sets/rossoNero/d12.jpg"
+        - "images/sets/rossoNero/d8.jpg"
+        - "images/sets/rossoNero/d6.jpg"
+        - "images/sets/rossoNero/d4_1.jpg"
+        - "images/sets/rossoNero/d4_2.jpg"
+        - "images/sets/rossoNero/d4_3.jpg"
+      complete_set: "images/sets/rossoNero/dice.jpg"
+      container: 
+        - "images/sets/rossoNero/coffer_closedFront.jpg"
+        - "images/sets/rossoNero/coffer_openDiceTop.jpg"
+    video: "images/sets/rossoNero/set.mp4"
+
+  - name: "Tangerine Dusk"
+    description: "Tangerine and blue dice."
+    features:
+      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
+      - "Colors: Crystal orange and crystal blue"
+      - "Numbering: golden and silver"
+      - "Inserts: silver foil"
+    images:
+      main: "images/sets/bluArancioni/set.jpg"
+      individual: 
+        - "images/sets/bluArancioni/d100.jpg"
+        - "images/sets/bluArancioni/d20.jpg"
+        - "images/sets/bluArancioni/d12.jpg"
+        - "images/sets/bluArancioni/d8.jpg"
+        - "images/sets/bluArancioni/d6.jpg"
+        - "images/sets/bluArancioni/d4_1.jpg"
+        - "images/sets/bluArancioni/d4_2.jpg"
+        - "images/sets/bluArancioni/d4_3.jpg"
+      complete_set: "images/sets/bluArancioni/dice.jpg"
+      container: 
+        - "images/sets/bluArancioni/longBox_openDiceFront.jpg"
+        - "images/sets/bluArancioni/longBox_closedFront.jpg"
+    video: "images/sets/bluArancioni/set.mp4" # "images/sets/bluArancioni/longBox_filled.mp4"
+    
+
+  - name: "Creamy sky"
+    description: "Clear blue shiny sky with creamy clouds dice."
+    features:
+      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
+      - "Colors: Crystal light blue and solid white"
+      - "Numbering: white"
+      - "Inserts: light mica powder (in blue and white)"
+    images:
+      main: "images/sets/nuvola/set.jpg"
+      individual: 
+        - "images/sets/nuvola/d100.jpg"
+        - "images/sets/nuvola/d20.jpg"
+        - "images/sets/nuvola/d12.jpg"
+        - "images/sets/nuvola/d8.jpg"
+        - "images/sets/nuvola/d6.jpg"
+        - "images/sets/nuvola/d4_1.jpg"
+        - "images/sets/nuvola/d4_2.jpg"
+        - "images/sets/nuvola/d4_3.jpg"
+      complete_set: "images/sets/nuvola/dice.jpg"
+      container: 
+        - "images/sets/nuvola/coffer_closedDiago.jpg"
+        - "images/sets/nuvola/coffer_openDiceFront.jpg"
+    video: "images/sets/nuvola/set.mp4"
+    
+  - name: "Desert Dune"
+    description: "Layered desertic dice.."
+    features:
+      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
+      - "Colors: golden, copper, bronze"
+      - "Numbering: golden"
+      - "Inserts: mica powder"
+    images:
+      main: "images/sets/deserto/set.jpg"
+      individual: 
+        - "images/sets/deserto/d100.jpg"
+        - "images/sets/deserto/d20.jpg"
+        - "images/sets/deserto/d12.jpg"
+        - "images/sets/deserto/d8.jpg"
+        - "images/sets/deserto/d6.jpg"
+        - "images/sets/deserto/d4_1.jpg"
+        - "images/sets/deserto/d4_2.jpg"
+        - "images/sets/deserto/d4_3.jpg"
+      complete_set: "images/sets/deserto/dice.jpg"
+      container: 
+        - "images/sets/deserto/longBox_openDiceFront.jpg"
+        - "images/sets/deserto/longBox_closedDiago.jpg"
+    video: "images/sets/deserto/set.mp4" # "images/sets/deserto/longBox_filled.mp4"
 
   - name: "Forest Guardian Set"
-    description: "Emerald green with embedded moss-like textures and gold numbering. Inspired by ancient forests and the mystical creatures that dwell within them."
+    description: "Sage green with crystal glares and silver numbering. Inspired by ancient forests and the mystical creatures that dwell within them."
     features:
-      - "Full 7-piece set"
-      - "Nature-inspired design"
-      - "Gold metallic numbering"
-      - "Organic texture patterns"
+      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
+      - "Colors: solid sage green and crystal green"
+      - "Numbering: silver"
+      - "Inserts: mica powder in sage green"
     images:
-      main: "images/sets/forest-guardian/main.jpg"
+      main: "images/sets/verdeSalvia/set.jpg"
       individual: 
-        - "images/sets/forest-guardian/d20.jpg"
-        - "images/sets/forest-guardian/d12.jpg"
-        - "images/sets/forest-guardian/d8.jpg"
-      complete_set: "images/sets/forest-guardian/complete-set.jpg"
-    video: "videos/forest-guardian-showcase.mp4"
+        - "images/sets/verdeSalvia/d100.jpg"
+        - "images/sets/verdeSalvia/d20.jpg"
+        - "images/sets/verdeSalvia/d12.jpg"
+        - "images/sets/verdeSalvia/d8.jpg"
+        - "images/sets/verdeSalvia/d6.jpg"
+        - "images/sets/verdeSalvia/d4_1.jpg"
+        - "images/sets/verdeSalvia/d4_2.jpg"
+        - "images/sets/verdeSalvia/d4_3.jpg"
+      complete_set: "images/sets/verdeSalvia/dice.jpg"
+    video: "images/sets/verdeSalvia/set.mp4" 
 
-  - name: "Volcanic Fire Set"
-    description: "Red and orange swirls with metallic inclusions that catch the light like molten lava. The perfect set for fire-based characters and dramatic campaigns."
+  - name: "Purple glow Set"
+    description: "Deep purple with green fluorescent inclusions. Perfect for rogues, warlocks, and any character who walks in the shadows."
     features:
       - "Full 7-piece set"
-      - "Custom wooden container"
-      - "Metallic copper finish"
-      - "Heat-resistant resin"
+      - "Colors: solid sage green and crystal green"
+      - "Numbering: silver and golden (on lowest and highest)"
     images:
-      main: "images/sets/volcanic-fire/main.jpg"
+      main: "images/sets/violaFluo/set.jpg"
       individual: 
-        - "images/sets/volcanic-fire/d20.jpg"
-      complete_set: "images/sets/volcanic-fire/complete-set.jpg"
-      container: 
-        - "images/sets/volcanic-fire/wooden-box.jpg"
-        - "images/sets/volcanic-fire/box-interior.jpg"
-    video: "videos/volcanic-fire-showcase.mp4"
-
-  - name: "Starlight Crystal Set"
-    description: "Clear resin with suspended glitter and iridescent flakes that sparkle like stars in the night sky. A truly magical addition to any collection."
-    features:
-      - "Full 7-piece set"
-      - "Holographic glitter inclusions"
-      - "Clear crystal resin"
-      - "Silver numbering"
-    images:
-      main: "images/sets/starlight-crystal/main.jpg"
-      individual: 
-        - "images/sets/starlight-crystal/d20.jpg"
-        - "images/sets/starlight-crystal/d12.jpg"
-      complete_set: "images/sets/starlight-crystal/complete-set.jpg"
-    video: "videos/starlight-crystal-showcase.mp4"
-
-  - name: "Shadow Realm Set"
-    description: "Deep purple and black swirls with silver inclusions. Perfect for rogues, warlocks, and any character who walks in the shadows."
-    features:
-      - "Full 7-piece set"
-      - "Custom black velvet pouch"
-      - "Silver metallic numbering"
-      - "Matte finish option"
-    images:
-      main: "images/sets/shadow-realm/main.jpg"
-      individual: 
-        - "images/sets/shadow-realm/d20.jpg"
-        - "images/sets/shadow-realm/d10.jpg"
-      complete_set: "images/sets/shadow-realm/complete-set.jpg"
-      container: 
-        - "images/sets/shadow-realm/velvet-pouch.jpg"
-    video: "videos/shadow-realm-showcase.mp4"
+        - "images/sets/violaFluo/d100.jpg"
+        - "images/sets/violaFluo/d20.jpg"
+        - "images/sets/violaFluo/d12.jpg"
+        - "images/sets/violaFluo/d8.jpg"
+        - "images/sets/violaFluo/d6.jpg"
+        - "images/sets/violaFluo/d4.jpg"
+      complete_set: "images/sets/violaFluo/dice.jpg"
+    video: "images/sets/violaFluo/set.mp4" 

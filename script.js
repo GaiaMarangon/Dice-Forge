@@ -351,44 +351,60 @@ function openModal(diceSet) {
     const modal = document.getElementById('dice-modal');
     const modalBody = document.getElementById('modal-body');
     
+    // Apply custom color palette if available
+    if (diceSet.color_palette) {
+        const root = document.documentElement;
+        root.style.setProperty('--modal-primary-color', diceSet.color_palette.primary);
+        root.style.setProperty('--modal-secondary-color', diceSet.color_palette.secondary);
+        root.style.setProperty('--modal-accent-color', diceSet.color_palette.accent);
+        root.style.setProperty('--modal-bg-color', diceSet.color_palette.modal_bg);
+        root.style.setProperty('--modal-text-color', diceSet.color_palette.text);
+    }
+    
     // Create modal content
     let galleryImages = '';
     if (diceSet.images.individual) {
         diceSet.images.individual.forEach(img => {
             galleryImages += img === "placeholder" ? 
-                '<div class="placeholder-image" style="height: 200px;"><span>Individual Die Image</span></div>' :
-                `<img src="${img}" alt="Individual die" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">`;
+                '<div class="placeholder-image" style="height: 200px; aspect-ratio: 1/1;"><span>Individual Die Image</span></div>' :
+                `<img src="${img}" alt="Individual die">`;
         });
     }
     
     let containerImages = '';
     if (diceSet.images.container) {
-        containerImages = '<h4>Custom Container</h4><div class="modal-gallery">';
+        containerImages = '<h4>Custom Container</h4><div class="modal-gallery container-gallery">';
         diceSet.images.container.forEach(img => {
             containerImages += img === "placeholder" ? 
-                '<div class="placeholder-image" style="height: 200px;"><span>Container Image</span></div>' :
-                `<img src="${img}" alt="Container" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">`;
+                '<div class="placeholder-image" style="height: 200px; aspect-ratio: 1/1;"><span>Container Image</span></div>' :
+                `<img src="${img}" alt="Container">`;
         });
         containerImages += '</div>';
     }
     
     const videoSection = diceSet.video === "placeholder" ? 
-        '<div class="modal-video"><div class="placeholder-image" style="height: 300px;"><span>Video Placeholder</span></div></div>' :
+        '<div class="modal-video"><div class="placeholder-image" style="height: 220px; aspect-ratio: 1/1; max-width: 220px;"><span>Video Placeholder</span></div></div>' :
         `<div class="modal-video"><video controls><source src="${diceSet.video}" type="video/mp4">Your browser does not support the video tag.</video></div>`;
     
     modalBody.innerHTML = `
         <h2>${diceSet.name}</h2>
-        <p style="font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 2rem;">${diceSet.description}</p>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">${diceSet.description}</p>
         
-        <h3>Complete Set</h3>
-        <div style="margin-bottom: 2rem;">
-            ${diceSet.images.complete_set === "placeholder" ? 
-                '<div class="placeholder-image" style="height: 300px;"><span>Complete Set Image</span></div>' :
-                `<img src="${diceSet.images.complete_set}" alt="Complete set" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">`
-            }
+        <div class="set-and-video-container">
+            <div>
+                <h3>Complete Set</h3>
+                <div class="complete-set-container">
+                    ${diceSet.images.complete_set === "placeholder" ? 
+                        '<div class="placeholder-image" style="height: 220px; aspect-ratio: 1/1; max-width: 220px;"><span>Complete Set Image</span></div>' :
+                        `<img src="${diceSet.images.complete_set}" alt="Complete set" class="complete-set-image">`
+                    }
+                </div>
+            </div>
+            <div>
+                <h3>Showcase Video</h3>
+                ${videoSection}
+            </div>
         </div>
-        
-        ${videoSection}
         
         <h4>Individual Dice</h4>
         <div class="modal-gallery">
@@ -411,6 +427,14 @@ function openModal(diceSet) {
 // Close modal
 function closeModal() {
     document.getElementById('dice-modal').style.display = 'none';
+    
+    // Reset custom modal colors
+    const root = document.documentElement;
+    root.style.removeProperty('--modal-primary-color');
+    root.style.removeProperty('--modal-secondary-color');
+    root.style.removeProperty('--modal-accent-color');
+    root.style.removeProperty('--modal-bg-color');
+    root.style.removeProperty('--modal-text-color');
 }
 
 // Mobile navigation toggle

@@ -59,6 +59,13 @@ contact:
 dice_sets:
   - name: "Pink salt gem"
     description: "Wonderful pink and white dice"
+    color_palette:
+      primary: "#e91e63"
+      secondary: "#f8bbd9" 
+      accent: "#ffc1cc"
+      background: "#fce4ec"
+      text: "#880e4f"
+      modal_bg: "#fff"
     features:
       - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
       - "Colors: Crystal pink and solid white"
@@ -80,6 +87,13 @@ dice_sets:
 
   - name: "Shiny leaf"
     description: "Light green dice glittering with gentle sparkles."
+    color_palette:
+      primary: "#4caf50"
+      secondary: "#81c784"
+      accent: "#c8e6c9"
+      background: "#e8f5e9"
+      text: "#1b5e20"
+      modal_bg: "#fff"
     features:
       - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
       - "Colors: Crystal light green"
@@ -104,6 +118,13 @@ dice_sets:
 
   - name: "Bloody Ink"
     description: "Bloody-red dice with black inky shades."
+    color_palette:
+      primary: "#d32f2f"
+      secondary: "#424242"
+      accent: "#ffab91"
+      background: "#1a1a1a"
+      text: "#fff"
+      modal_bg: "#2d2d2d"
     features:
       - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
       - "Colors: Crystal red with solid black shades"
@@ -127,6 +148,13 @@ dice_sets:
 
   - name: "Tangerine Dusk"
     description: "Tangerine and blue dice."
+    color_palette:
+      primary: "#ff5722"
+      secondary: "#2196f3"
+      accent: "#ffc947"
+      background: "#fff3e0"
+      text: "#e65100"
+      modal_bg: "#fff"
     features:
       - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
       - "Colors: Crystal orange and crystal blue"
@@ -152,6 +180,13 @@ dice_sets:
 
   - name: "Creamy sky"
     description: "Clear blue shiny sky with creamy clouds dice."
+    color_palette:
+      primary: "#03a9f4"
+      secondary: "#e1f5fe"
+      accent: "#81d4fa"
+      background: "#f0f8ff"
+      text: "#01579b"
+      modal_bg: "#fff"
     features:
       - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
       - "Colors: Crystal light blue and solid white"
@@ -176,6 +211,13 @@ dice_sets:
     
   - name: "Desert Dune"
     description: "Layered desertic dice.."
+    color_palette:
+      primary: "#d4af37"
+      secondary: "#cd853f"
+      accent: "#daa520"
+      background: "#fdf5e6"
+      text: "#8b4513"
+      modal_bg: "#fff"
     features:
       - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
       - "Colors: golden, copper, bronze"
@@ -200,6 +242,13 @@ dice_sets:
 
   - name: "Forest Guardian Set"
     description: "Sage green with crystal glares and silver numbering. Inspired by ancient forests and the mystical creatures that dwell within them."
+    color_palette:
+      primary: "#689f38"
+      secondary: "#8bc34a"
+      accent: "#c5e1a5"
+      background: "#f1f8e9"
+      text: "#33691e"
+      modal_bg: "#fff"
     features:
       - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
       - "Colors: solid sage green and crystal green"
@@ -221,6 +270,13 @@ dice_sets:
 
   - name: "Purple glow Set"
     description: "Deep purple with green fluorescent inclusions. Perfect for rogues, warlocks, and any character who walks in the shadows."
+    color_palette:
+      primary: "#7b1fa2"
+      secondary: "#4caf50"
+      accent: "#ba68c8"
+      background: "#1a1a1a"
+      text: "#fff"
+      modal_bg: "#2d2d2d"
     features:
       - "Full 7-piece set"
       - "Colors: solid sage green and crystal green"

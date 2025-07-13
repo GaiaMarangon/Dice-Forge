@@ -40,7 +40,7 @@ color_themes:
   shadow:
     name: "Shadow Realm"
     primary: "#2c1810"
-    secondary: "#4a148c"
+    secondary: "#8C6AB6" #4a148c
     accent: "#9c27b0"
     background: "#1a1a1a"
     text: "#ffffff"

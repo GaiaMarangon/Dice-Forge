@@ -924,7 +924,7 @@ footer {
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 1.5rem;
-    color: var(--primary-color);
+    color: var(--forge-heading, var(--primary-color));
     border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.5);
     padding-bottom: 0.8rem;
     font-family: 'Cinzel', serif;
@@ -949,7 +949,8 @@ footer {
     position: relative;
     border: 1px solid transparent;
     margin-bottom: 0.6rem;
-    background-color: rgba(var(--card-bg-rgb, 255, 255, 255), 0.5);
+    background-color: var(--forge-item-bg, rgba(var(--card-bg-rgb, 255, 255, 255), 0.5));
+    color: var(--forge-text, var(--text-color));
 }
 
 .forge-option-item:hover {
@@ -1097,6 +1098,22 @@ footer {
 .forge-contact-button:hover {
     transform: translateY(-3px) scale(1.03);
     box-shadow: 0 10px 25px rgba(var(--accent-color-rgb), 0.5);
+}
+
+/* Tema scuro - miglioramenti specifici */
+[style*="--text-color: #ffffff"] .forge-option-icon {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[style*="--text-color: #ffffff"] .forge-option-block {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[style*="--text-color: #ffffff"] .forge-option-item:hover {
+    background-color: rgba(var(--accent-color-rgb), 0.25);
+    border: 1px solid rgba(var(--accent-color-rgb), 0.5);
 }
 
 /* Responsive Design */

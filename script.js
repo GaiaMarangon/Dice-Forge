@@ -236,10 +236,20 @@ function applyTheme(themeName) {
             // Dark theme - use lighter text colors
             root.style.setProperty('--light-text', '#ffffff');
             root.style.setProperty('--muted-text', '#cccccc');
+            
+            // Additional adjustments for dark theme
+            root.style.setProperty('--forge-text', '#ffffff');
+            root.style.setProperty('--forge-item-bg', 'rgba(70, 70, 70, 0.7)');
+            root.style.setProperty('--forge-heading', '#e0e0e0');
         } else {
             // Light theme - use traditional light colors
             root.style.setProperty('--light-text', '#f4f1e8');
             root.style.setProperty('--muted-text', darkenColor(theme.background, 15));
+            
+            // Reset forge-specific variables for light theme
+            root.style.setProperty('--forge-text', theme.text);
+            root.style.setProperty('--forge-item-bg', `rgba(${hexToRgb(theme.card_bg)}, 0.5)`);
+            root.style.setProperty('--forge-heading', theme.primary);
         }
         
         // Generate lighter shades for gradients

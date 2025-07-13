@@ -1,25 +1,27 @@
-Colorazione del dado:
-- colore singolo
-- colore doppio
-- colore con venature
-
-Inserti:
-- brillantini
-- polvere di mica (effetto metallizzato)
-- inserti di metallo (foglia d'oro/argento/bronzo)
-
-Colori:
-- opachi: bianco, nero
-- fluo: rosa, giallo
-- trasparenti: vari, combinabili per creare colori personalizzati 
-
-Colore dei numeri (singolo o multiplo):
-- oro
-- argento
-- bianco
-
-Contenitore:
-- scrigno
-- scatola lunga
+vorrei creare una nuova sezione "Forge" nella pagina principale in cui illustrare le caratteristiche che un set di dadi può avere. così se uno vuole avere dei dadi personalizzati sa che variabili può richiedere. Mettila tra portfolio e about. organizzala con le informazioni che seguono, disponendole ciascuna in un blocco al cui interno mostrare il titolo e le varie voci. blocchi affiancabili, eventualemnte su più righe. per ciascuna voce prevedi un'icona, eventualmente sostituibile con un immagine caricata nel file config. quando scorro su ciascuna voce, vorrei che un riquadro attorno ad essa comparisse, con colore diverso dallo sfondo, per visualizzarla meglio. inoltre sempre scorrendo l'iconcina/immagine dovrebbe ingrandirsi e dovrebbe comparirle intorno un alone che pulsa fintanto che rimango sopra con il mouse. infine, quando clicco sopra a ciascuna voce questa deve comparire come selezionata. al nuovo clic scompare la selezione. se con delle voci selezionate premo contact the artisan proponi un messaggio nella casella "your message" con le voci selezionate, che descriva tecnicamente le richieste per il set di dadi da forgiare. il messaggio deve essere modificabile dall'utente, che poi invia quando vuole.
+Le variabili da inserire nei blocchi sono queste, scrivile in inglese:
 
 
+- Colorazione del dado:
+ -- colore singolo
+ -- colore doppio 
+ -- colore con venature
+
+- Inserti:
+ -- brillantini
+ -- polvere di mica (effetto metallizzato)
+ -- inserti di metallo (foglia d'oro/argento/bronzo)
+ 
+- Colori:
+ -- opachi: bianco, nero
+ -- fluo: rosa, giallo
+ -- trasparenti: vari, combinabili per creare colori personalizzati
+
+- Colore dei numeri (singolo o multiplo):
+ -- oro
+ -- argento
+ -- bianco
+
+- Contenitore:
+ -- scrigno
+ -- scatola lunga

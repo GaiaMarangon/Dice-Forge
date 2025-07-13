@@ -291,4 +291,69 @@ dice_sets:
         - "images/sets/violaFluo/d6.jpg"
         - "images/sets/violaFluo/d4.jpg"
       complete_set: "images/sets/violaFluo/dice.jpg"
-    video: "images/sets/violaFluo/set.mp4" 
+    video: "images/sets/violaFluo/set.mp4"
+
+# Forge Options Configuration
+forge_options:
+  # Each forge option can have custom icons if needed
+  dice_coloration:
+    title: "Dice Coloration"
+    options:
+      - name: "Single Color"
+        icon: "🎨"
+        description: "Solid single color throughout"
+      - name: "Dual Color"
+        icon: "🎭"
+        description: "Two distinct colors blended or separated"
+      - name: "Veined Color" 
+        icon: "🌊"
+        description: "Base color with veined patterns throughout"
+        
+  inserts:
+    title: "Inserts"
+    options:
+      - name: "Glitter"
+        icon: "✨"
+        description: "Sparkling glitter embedded in the resin"
+      - name: "Mica Powder"
+        icon: "💎"
+        description: "Metallic effect with mica powder"
+      - name: "Metal Inserts"
+        icon: "🥇"
+        description: "Gold, silver, or bronze leaf embedded in the resin"
+        
+  colors:
+    title: "Colors"
+    options:
+      - name: "Opaque Colors"
+        icon: "⚪"
+        description: "Solid opaque options: white, black"
+      - name: "Fluorescent Colors"
+        icon: "🌟"
+        description: "Bright fluorescent options: pink, yellow"
+      - name: "Transparent Colors"
+        icon: "🔍"
+        description: "Clear colors that can be combined for custom effects"
+        
+  number_colors:
+    title: "Number Colors"
+    options:
+      - name: "Gold Numbers"
+        icon: "🌕"
+        description: "Shimmering gold numbering"
+      - name: "Silver Numbers"
+        icon: "🌑"
+        description: "Elegant silver numbering"
+      - name: "White Numbers"
+        icon: "⚪"
+        description: "Classic white numbering"
+        
+  container:
+    title: "Container"
+    options:
+      - name: "Coffer"
+        icon: "🧰"
+        description: "Square coffer to hold your complete dice set"
+      - name: "Long Box"
+        icon: "📦"
+        description: "Elongated box for displaying dice in a row"

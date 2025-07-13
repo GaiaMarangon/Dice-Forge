@@ -4,6 +4,7 @@ let contactData = null;
 let siteImages = null;
 let siteConfig = null;
 let colorThemes = null;
+let forgeOptions = null;
 let currentTheme = 'tavern';
 
 // Load YAML configuration
@@ -18,6 +19,9 @@ async function loadConfiguration() {
         siteImages = config.site_images;
         siteConfig = config.site_config;
         colorThemes = config.color_themes;
+        forgeOptions = config.forge_options;
+        
+        console.log('Configuration loaded, forgeOptions:', forgeOptions);
         
         // Set dynamic title
         setRandomTitle();
@@ -33,6 +37,9 @@ async function loadConfiguration() {
         
         // Render portfolio
         renderPortfolio();
+        
+        // Setup forge options (includes rendering)
+        setupForgeOptions();
     } catch (error) {
         console.error('Error loading configuration:', error);
         // Load fallback data if YAML fails
@@ -218,6 +225,12 @@ function applyTheme(themeName) {
         root.style.setProperty('--text-color', theme.text);
         root.style.setProperty('--card-bg', theme.card_bg);
         
+        // Update RGB values for colors (needed for forge section effects)
+        root.style.setProperty('--accent-color-rgb', hexToRgb(theme.accent));
+        root.style.setProperty('--primary-color-rgb', hexToRgb(theme.primary));
+        root.style.setProperty('--secondary-color-rgb', hexToRgb(theme.secondary));
+        root.style.setProperty('--card-bg-rgb', hexToRgb(theme.card_bg));
+        
         // Set light text colors based on theme
         if (theme.text === '#ffffff') {
             // Dark theme - use lighter text colors
@@ -256,6 +269,24 @@ function lightenColor(color, percent) {
 // Helper function to darken colors
 function darkenColor(color, percent) {
     return lightenColor(color, -percent);
+}
+
+// Convert hex color to RGB values
+function hexToRgb(hex) {
+    // Remove # if present
+    hex = hex.replace(/^#/, '');
+    
+    // Convert 3-digit hex to 6-digits
+    if (hex.length === 3) {
+        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    
+    // Extract RGB components
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    
+    return `${r}, ${g}, ${b}`;
 }
 
 // Render theme options
@@ -474,6 +505,139 @@ function smoothScroll(target) {
     }
 }
 
+// Render the forge options from YAML config
+function renderForgeOptions() {
+    console.log('renderForgeOptions called, forgeOptions:', forgeOptions);
+    
+    if (!forgeOptions) {
+        console.error('No forge options available');
+        return;
+    }
+    
+    const forgeOptionsContainer = document.querySelector('.forge-options');
+    if (!forgeOptionsContainer) {
+        console.error('Forge options container not found');
+        return;
+    }
+    
+    // Clear any existing content
+    forgeOptionsContainer.innerHTML = '';
+    
+    // Create blocks for each category
+    Object.keys(forgeOptions).forEach(categoryKey => {
+        const category = forgeOptions[categoryKey];
+        
+        // Create category block
+        const blockEl = document.createElement('div');
+        blockEl.className = 'forge-option-block';
+        
+        // Create heading
+        const headingEl = document.createElement('h3');
+        headingEl.textContent = category.title;
+        blockEl.appendChild(headingEl);
+        
+        // Create options grid
+        const gridEl = document.createElement('div');
+        gridEl.className = 'forge-options-grid';
+        
+        // Add options
+        category.options.forEach(option => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'forge-option-item';
+            itemEl.setAttribute('data-forge-option', option.name);
+            itemEl.setAttribute('data-category', category.title);
+            
+            // Create icon
+            const iconEl = document.createElement('div');
+            iconEl.className = 'forge-option-icon';
+            iconEl.textContent = option.icon;
+            
+            // Create text
+            const textEl = document.createElement('span');
+            textEl.textContent = option.name;
+            
+            // Add tooltip for description
+            itemEl.title = option.description;
+            
+            // Assemble the option item
+            itemEl.appendChild(iconEl);
+            itemEl.appendChild(textEl);
+            gridEl.appendChild(itemEl);
+        });
+        
+        // Append grid to block
+        blockEl.appendChild(gridEl);
+        
+        // Append block to container
+        forgeOptionsContainer.appendChild(blockEl);
+    });
+}
+
+// Handle Forge Options Selection
+function setupForgeOptions() {
+    // Render forge options first
+    renderForgeOptions();
+    
+    // Then set up event handlers
+    const forgeOptionItems = document.querySelectorAll('.forge-option-item');
+    const messageTextarea = document.getElementById('message');
+    
+    // Track selected options
+    let selectedOptions = [];
+    
+    forgeOptionItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const option = this.getAttribute('data-forge-option');
+            const category = this.getAttribute('data-category');
+            
+            // Toggle selection
+            this.classList.toggle('selected');
+            
+            // Update selected options
+            if (this.classList.contains('selected')) {
+                selectedOptions.push({ category, option });
+            } else {
+                selectedOptions = selectedOptions.filter(
+                    opt => !(opt.category === category && opt.option === option)
+                );
+            }
+        });
+    });
+    
+    // Contact button click handler
+    const forgeContactButton = document.querySelector('.forge-contact-button');
+    if (forgeContactButton) {
+        forgeContactButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            // Create forge message if options are selected
+            if (selectedOptions.length > 0) {
+                let forgeMessage = "Hi there Artisan!\n\nI'd love to have a custom dice set made with these features:\n\n";
+                
+                // Group selected options by category
+                const groupedOptions = {};
+                selectedOptions.forEach(opt => {
+                    if (!groupedOptions[opt.category]) {
+                        groupedOptions[opt.category] = [];
+                    }
+                    groupedOptions[opt.category].push(opt.option);
+                });
+                
+                // Add each category and selected options to the message
+                for (const category in groupedOptions) {
+                    forgeMessage += `• ${category}: ${groupedOptions[category].join(', ')}\n`;
+                }
+                
+                // Set the message in the contact form
+                messageTextarea.value = forgeMessage;
+            }
+            
+            // Scroll to contact form
+            smoothScroll('#contact');
+        });
+    }
+}
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
     // Load configuration and render content
@@ -534,4 +698,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.style.background = 'rgba(44, 24, 16, 0.95)';
         }
     });
+    
+    // Setup forge options
+    setupForgeOptions();
 });

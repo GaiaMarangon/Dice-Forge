@@ -4,11 +4,11 @@
 # Site Configuration
 site_config:
   title_words:
-    - "critical hits"
-    - "randomness"
-    - "mysteries"
-    - "unknown"
-    - "dice"
+    - "Critical Hits"
+    - "Randomness"
+    - "Mysteries"
+    - "Unknown"
+    - "Dice"
     - "Partial Differential dicE"
 
 # Color Themes
@@ -48,12 +48,12 @@ color_themes:
 
 # Site Images
 site_images:
-  hero: "images/forger.jpg"
+  hero: "images/forgeSetting_side.jpg"
   about: "images/forger.jpg"
 
 # Contact Information
 contact:
-  email: "your.email@example.com"
+  email: "gaiadiceforger@gmail.com"
 
 # Dice Sets Collection
 dice_sets:
@@ -67,12 +67,13 @@ dice_sets:
       text: "#880e4f"
       modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: Crystal pink and solid white"
-      - "Numbering: white"
-      - "Inserts: silver foil"
+      - "9-piece set"
+      - "Dual Colors" 
+      - "Crystal pink and solid white"
+      - "White numbers"
+      - "Silver foil inserts"
     images:
-      main: "images/sets/rosa/set.jpg"
+      main: "images/sets/rosa/dice.jpg"
       individual: 
         - "images/sets/rosa/d100.jpg"
         - "images/sets/rosa/d20.jpg"
@@ -95,12 +96,13 @@ dice_sets:
       text: "#1b5e20"
       modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: Crystal light green"
-      - "Numbering: white"
-      - "Inserts: small golden glitters"
+      - "9-piece set"
+      - "Single Color" 
+      - "Crystal light green"
+      - "White numbers"
+      - "Small golden glitters"
     images:
-      main: "images/sets/verdeBrillantini/set.jpg"
+      main: "images/sets/verdeBrillantini/dice.jpg"
       individual: 
         - "images/sets/verdeBrillantini/d100.jpg"
         - "images/sets/verdeBrillantini/d20.jpg"
@@ -126,11 +128,11 @@ dice_sets:
       text: "#fff"
       modal_bg: "#2d2d2d"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
+      - "9-piece set"
       - "Colors: Crystal red with solid black shades"
       - "Numbering: golden"
     images:
-      main: "images/sets/rossoNero/set.jpg"
+      main: "images/sets/rossoNero/dice.jpg"
       individual: 
         - "images/sets/rossoNero/d100.jpg"
         - "images/sets/rossoNero/d20.jpg"
@@ -161,7 +163,7 @@ dice_sets:
       - "Numbering: golden and silver"
       - "Inserts: silver foil"
     images:
-      main: "images/sets/bluArancioni/set.jpg"
+      main: "images/sets/bluArancioni/dice.jpg"
       individual: 
         - "images/sets/bluArancioni/d100.jpg"
         - "images/sets/bluArancioni/d20.jpg"
@@ -193,7 +195,7 @@ dice_sets:
       - "Numbering: white"
       - "Inserts: light mica powder (in blue and white)"
     images:
-      main: "images/sets/nuvola/set.jpg"
+      main: "images/sets/nuvola/dice.jpg"
       individual: 
         - "images/sets/nuvola/d100.jpg"
         - "images/sets/nuvola/d20.jpg"
@@ -224,7 +226,7 @@ dice_sets:
       - "Numbering: golden"
       - "Inserts: mica powder"
     images:
-      main: "images/sets/deserto/set.jpg"
+      main: "images/sets/deserto/dice.jpg"
       individual: 
         - "images/sets/deserto/d100.jpg"
         - "images/sets/deserto/d20.jpg"
@@ -255,7 +257,7 @@ dice_sets:
       - "Numbering: silver"
       - "Inserts: mica powder in sage green"
     images:
-      main: "images/sets/verdeSalvia/set.jpg"
+      main: "images/sets/verdeSalvia/dice.jpg"
       individual: 
         - "images/sets/verdeSalvia/d100.jpg"
         - "images/sets/verdeSalvia/d20.jpg"
@@ -282,7 +284,7 @@ dice_sets:
       - "Colors: solid sage green and crystal green"
       - "Numbering: silver and golden (on lowest and highest)"
     images:
-      main: "images/sets/violaFluo/set.jpg"
+      main: "images/sets/violaFluo/dice.jpg"
       individual: 
         - "images/sets/violaFluo/d100.jpg"
         - "images/sets/violaFluo/d20.jpg"

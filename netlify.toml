@@ -18,6 +18,15 @@
 [[headers]]
   # YAML file headers
   for = "*.yaml"
+  
+# Form handling configuration
+[forms]
+  # Form with name "contact" (must match form name attribute in HTML)
+  [forms.contact]
+    # Success page after form submission
+    success_url = "/form-success.html"
+    # Set to true to receive email notifications
+    email_notifications = true
   [headers.values]
     Content-Type = "text/yaml"
 

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Sent - The Forge of Dice</title>
+    <meta name="description" content="Thank you for contacting The Forge of Dice. Your message has been successfully sent.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .success-title {
+            font-family: 'Cinzel', serif;
+            margin-bottom: 1rem;
+        }
+        
+        .success-message {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .back-home {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2 id="nav-title">The Forge of Dice</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="index.html#forge" class="nav-link">Forge</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-switcher" class="theme-button" title="Change Theme">
+                    <span class="theme-icon">🎨</span>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Section -->
+    <section class="success-container">
+        <div class="success-icon">⚒️</div>
+        <h1 class="success-title">Message Successfully Sent!</h1>
+        <p class="success-message">
+            Thank you for contacting The Forge of Dice. Your message has been received and will be carefully reviewed by our master artisan.
+            Expect a response within 1-2 business days.
+        </p>
+        <p>May your rolls be ever in your favor!</p>
+        <a href="index.html" class="cta-button back-home">Return to Homepage</a>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Artisan Dice Forge. Where legends are rolled.</p>
+        </div>
+    </footer>
+
+    <script src="js-yaml.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

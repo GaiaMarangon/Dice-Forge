@@ -534,19 +534,17 @@ function toggleMobileNav() {
 
 // Contact form handling
 function handleContactForm(event) {
-    event.preventDefault();
+    // With Netlify Forms, we don't need to handle form submission manually
+    // The form will be automatically processed by Netlify
+    // This function is kept for any client-side validation or UX improvements
     
-    const formData = new FormData(event.target);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message')
-    };
+    // We'll show a confirmation message without preventing the default form action
+    // setTimeout is used to ensure the form is submitted to Netlify before showing the alert
+    setTimeout(() => {
+        alert('Greetings, fellow adventurer! Your message has been sent to the forge. The artisan will respond to your quest soon.');
+    }, 100);
     
-    // Here you would typically send the data to a server
-    // For now, we'll just show an alert
-    alert('Greetings, fellow adventurer! Your message has been sent to the forge. The artisan will respond to your quest soon.');
-    event.target.reset();
+    // Do not preventDefault() as we want Netlify to handle the form submission
 }
 
 // Smooth scrolling for navigation links

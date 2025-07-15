@@ -643,6 +643,19 @@ body {
     background: var(--card-bg);
 }
 
+/* Highlight effect for textarea when targeted by scroll */
+.form-group textarea.highlight-focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px var(--accent-color);
+    animation: textarea-highlight 1.5s;
+}
+
+@keyframes textarea-highlight {
+    0% { border-color: var(--text-color); box-shadow: 0 0 5px var(--text-color); }
+    50% { border-color: var(--accent-color); box-shadow: 0 0 15px var(--accent-color); }
+    100% { border-color: var(--accent-color); box-shadow: 0 0 8px var(--accent-color); }
+}
+
 .submit-button {
     width: 100%;
     padding: 15px;

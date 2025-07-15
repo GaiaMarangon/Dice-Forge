@@ -57,7 +57,7 @@ contact:
 
 # Dice Sets Collection
 dice_sets:
-  - name: "Pink salt gem"
+  - name: "Pink Salt Gems Set"
     description: "Crystalline pink and white dice with silver accents. Like fragments of Himalayan salt crystals, these dice carry the energy of ancient mountains."
     color_palette:
       primary: "#e91e63"
@@ -95,8 +95,8 @@ dice_sets:
       complete_set: "images/sets/rosa/dice.jpg"
     video: "images/sets/rosa/set.mp4"
 
-  - name: "Shiny leaf"
-    description: "Light green dice adorned with golden glitter sparkles. Each roll captures the essence of sunlight dancing through spring leaves."
+  - name: "Shiny Leaves Set"
+    description: "Light green dice adorned with golden glitter sparkles. Each roll captures the sunlight dancing through spring leaves."
     color_palette:
       primary: "#4caf50"
       secondary: "#81c784"
@@ -142,7 +142,7 @@ dice_sets:
         - "images/sets/verdeBrillantini/coffer_openDiceFront.jpg"
     video: "images/sets/verdeBrillantini/set.mp4" 
 
-  - name: "Bloody Ink"
+  - name: "Bloody Ink Set"
     description: "Deep crimson dice with swirling black veins throughout. Like ancient scrolls written in blood, these dice tell tales of dark pacts and forbidden magic."
     color_palette:
       primary: "#d32f2f"
@@ -187,7 +187,7 @@ dice_sets:
         - "images/sets/rossoNero/coffer_openDiceTop.jpg"
     video: "images/sets/rossoNero/set.mp4"
 
-  - name: "Tangerine Dusk"
+  - name: "Tangerine Dusk Set"
     description: "Vibrant orange and deep blue dice with metallic foil inclusions. They capture the magical moment when the setting sun meets the rising night sky."
     color_palette:
       primary: "#ff5722"
@@ -234,7 +234,7 @@ dice_sets:
     video: "images/sets/bluArancioni/set.mp4"
     
 
-  - name: "Creamy sky"
+  - name: "Creamy Sky Set"
     description: "Crystal blue dice with swirling white cloud patterns. Each roll feels like casting your fate to the endless summer skies above."
     color_palette:
       primary: "#03a9f4"
@@ -280,7 +280,7 @@ dice_sets:
         - "images/sets/nuvola/coffer_openDiceFront.jpg"
     video: "images/sets/nuvola/set.mp4"
     
-  - name: "Desert Dune"
+  - name: "Desert Dune Set"
     description: "Layered dice in gold, copper and bronze tones. Like the shifting sands of ancient deserts, they hold the mysteries of forgotten civilizations."
     color_palette:
       primary: "#d4af37"
@@ -364,7 +364,7 @@ dice_sets:
       complete_set: "images/sets/verdeSalvia/dice.jpg"
     video: "images/sets/verdeSalvia/set.mp4" 
 
-  - name: "Purple glow Set"
+  - name: "Purple Glow Set"
     description: "Deep purple with green fluorescent shades. Perfect for rogues, warlocks, and any character who walks in the shadows."
     color_palette:
       primary: "#7b1fa2"

@@ -553,10 +553,37 @@ function handleContactForm(event) {
 function smoothScroll(target) {
     const element = document.querySelector(target);
     if (element) {
-        element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
+        // For form elements like the message textarea, ensure it's properly visible
+        if (target === '#message') {
+            // First scroll to contact section to ensure it's visible
+            document.querySelector('#contact').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Add a small delay to ensure the contact section is in view before focusing on textarea
+            setTimeout(() => {
+                // Then scroll to the message textarea for precise positioning
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Focus on the textarea and add highlight effect
+                element.focus();
+                element.classList.add('highlight-focus');
+                
+                // Remove the highlight class after animation completes
+                setTimeout(() => {
+                    element.classList.remove('highlight-focus');
+                }, 1600);
+            }, 400);
+        } else {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     }
 }
 
@@ -687,8 +714,8 @@ function setupForgeOptions() {
                 messageTextarea.value = forgeMessage;
             }
             
-            // Scroll to contact form
-            smoothScroll('#contact');
+            // Scroll to message textarea in the contact form
+            smoothScroll('#message');
         });
     }
 }

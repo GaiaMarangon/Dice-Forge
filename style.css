@@ -9,6 +9,7 @@
     --light-text: #f4f1e8;
     --muted-text: #e8dcc0;
     --accent-color-rgb: 212, 175, 55; /* RGB values for accent color */
+    --primary-color-rgb: 44, 24, 16; /* RGB values for primary color */
 }
 
 /* Reset and Base Styles */
@@ -767,11 +768,35 @@ body {
     width: 100%;
 }
 
+.container-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .modal-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.5rem;
     margin: 2rem 0;
+}
+
+.modal-gallery > div {
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.modal-gallery > div:hover {
+    transform: scale(1.05);
+    z-index: 5;
+}
+
+/* Styles for modal dice items */
+.modal-gallery img {
+    display: block;
+    object-fit: cover;
 }
 
 .modal-gallery img {
@@ -1224,6 +1249,11 @@ footer {
     .container-gallery {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         max-width: 400px;
+        justify-items: start;
+    }
+    
+    .container-gallery img {
+        width: 75%;
     }
 
     .modal-video video {
@@ -1302,4 +1332,48 @@ footer {
     .theme-icon {
         font-size: 0.9rem;
     }
+}
+
+/* Individual Dice Type Labels */
+.modal-gallery img {
+    position: relative;
+}
+
+.dice-type-label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    padding: 4px 8px;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 10px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))), 
+                 0 0 15px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))),
+                 0 0 20px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))),
+                 1px 1px 2px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+    z-index: 10;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.modal-gallery > div:hover .dice-type-label {
+    transform: scale(1.1);
+    text-shadow: 0 0 12px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))), 
+                 0 0 18px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))),
+                 0 0 24px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))),
+                 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Container images specific style */
+.container-gallery img {
+    width: 75%;
+    margin-right: 25%;
+}
+
+.container-gallery > div {
+    display: flex;
+    justify-content: flex-start;
 }

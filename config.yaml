@@ -96,11 +96,12 @@ dice_sets:
       text: "#1b5e20"
       modal_bg: "#fff"
     features:
-      - "9-piece set"
+      - "9-piece set, coffer container"
       - "Single Color" 
       - "Crystal light green"
       - "White numbers"
-      - "Small golden glitters"
+      - "Golden glitters"
+
     images:
       main: "images/sets/verdeBrillantini/dice.jpg"
       individual: 
@@ -128,9 +129,10 @@ dice_sets:
       text: "#fff"
       modal_bg: "#2d2d2d"
     features:
-      - "9-piece set"
-      - "Colors: Crystal red with solid black shades"
-      - "Numbering: golden"
+      - "9-piece set, coffer container"
+      - "Veined Color"
+      - "Crystal red with solid black shades"
+      - "Golden numbers"
     images:
       main: "images/sets/rossoNero/dice.jpg"
       individual: 
@@ -158,10 +160,11 @@ dice_sets:
       text: "#e65100"
       modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: Crystal orange and crystal blue"
-      - "Numbering: golden and silver"
-      - "Inserts: silver foil"
+      - "9-piece set, long box container"
+      - "Dual Colors"
+      - "Crystal orange and crystal blue"
+      - "Golden and silver numbers"
+      - "Silver foil inclusions"
     images:
       main: "images/sets/bluArancioni/dice.jpg"
       individual: 
@@ -190,10 +193,11 @@ dice_sets:
       text: "#01579b"
       modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: Crystal light blue and solid white"
-      - "Numbering: white"
-      - "Inserts: light mica powder (in blue and white)"
+      - "9-piece set, coffer container"
+      - "Dual Colors"
+      - "Crystal light blue and solid white"
+      - "White numbers"
+      - "Mica powder (in blue and white)"
     images:
       main: "images/sets/nuvola/dice.jpg"
       individual: 
@@ -221,10 +225,11 @@ dice_sets:
       text: "#8b4513"
       modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: golden, copper, bronze"
-      - "Numbering: golden"
-      - "Inserts: mica powder"
+      - "9-piece set, long box container"
+      - "Dual Colors" 
+      - "Golden, copper, bronze"
+      - "Golden numbers"
+      - "Mica powder"
     images:
       main: "images/sets/deserto/dice.jpg"
       individual: 
@@ -252,10 +257,11 @@ dice_sets:
       text: "#33691e"
       modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: solid sage green and crystal green"
-      - "Numbering: silver"
-      - "Inserts: mica powder in sage green"
+      - "9-piece set"
+      - "Dual Colors"
+      - "Solid sage green and crystal green"
+      - "Silver Numbers"
+      - "Mica powder (in sage green)"
     images:
       main: "images/sets/verdeSalvia/dice.jpg"
       individual: 
@@ -280,9 +286,10 @@ dice_sets:
       text: "#fff"
       modal_bg: "#2d2d2d"
     features:
-      - "Full 7-piece set"
-      - "Colors: solid sage green and crystal green"
-      - "Numbering: silver and golden (on lowest and highest)"
+      - "7-piece set"
+      - "Dual Colors"
+      - "Dark purple and fluorescent crystal green"
+      - "Silver numbers"
     images:
       main: "images/sets/violaFluo/dice.jpg"
       individual: 

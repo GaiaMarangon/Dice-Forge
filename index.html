@@ -20,6 +20,7 @@
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#forge" class="nav-link">Forge</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -62,6 +63,112 @@
             <!-- Portfolio Grid -->
             <div id="portfolio-grid" class="portfolio-grid">
                 <!-- Dice sets will be loaded here from YAML -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Forge Section -->
+    <section id="forge" class="forge">
+        <div class="container">
+            <h2>Forge Your Custom Dice</h2>
+            <p class="section-subtitle">Select the options for your personalized dice set</p>
+            
+            <!-- Forge Options - Initially rendered statically, can be overwritten by JavaScript -->
+            <div class="forge-options">
+                <!-- Dice Coloration Options -->
+                <div class="forge-option-block">
+                    <h3>Dice Coloration</h3>
+                    <div class="forge-options-grid">
+                        <div class="forge-option-item" data-forge-option="Single Color" data-category="Dice Coloration">
+                            <div class="forge-option-icon">🎨</div>
+                            <span>Single Color</span>
+                        </div>
+                        <div class="forge-option-item" data-forge-option="Dual Color" data-category="Dice Coloration">
+                            <div class="forge-option-icon">🎭</div>
+                            <span>Dual Color</span>
+                        </div>
+                        <div class="forge-option-item" data-forge-option="Veined Color" data-category="Dice Coloration">
+                            <div class="forge-option-icon">🌊</div>
+                            <span>Veined Color</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inserts Options -->
+                <div class="forge-option-block">
+                    <h3>Inserts</h3>
+                    <div class="forge-options-grid">
+                        <div class="forge-option-item" data-forge-option="Glitter" data-category="Inserts">
+                            <div class="forge-option-icon">✨</div>
+                            <span>Glitter</span>
+                        </div>
+                        <div class="forge-option-item" data-forge-option="Mica Powder" data-category="Inserts">
+                            <div class="forge-option-icon">💎</div>
+                            <span>Mica Powder (Metallic Effect)</span>
+                        </div>
+                        <div class="forge-option-item" data-forge-option="Metal Inserts" data-category="Inserts">
+                            <div class="forge-option-icon">🥇</div>
+                            <span>Metal Inserts (Gold/Silver/Bronze Leaf)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colors Options -->
+                <div class="forge-option-block">
+                    <h3>Colors</h3>
+                    <div class="forge-options-grid">
+                        <div class="forge-option-item" data-forge-option="Opaque Colors" data-category="Colors">
+                            <div class="forge-option-icon">⚪</div>
+                            <span>Opaque: White, Black</span>
+                        </div>
+                        <div class="forge-option-item" data-forge-option="Fluorescent Colors" data-category="Colors">
+                            <div class="forge-option-icon">🌟</div>
+                            <span>Fluorescent: Pink, Yellow</span>
+                        </div>
+                        <div class="forge-option-item" data-forge-option="Transparent Colors" data-category="Colors">
+                            <div class="forge-option-icon">🔍</div>
+                            <span>Transparent: Various, Can Be Combined</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Number Colors Options -->
+                <div class="forge-option-block">
+                    <h3>Number Colors</h3>
+                    <div class="forge-options-grid">
+                        <div class="forge-option-item" data-forge-option="Gold Numbers" data-category="Number Colors">
+                            <div class="forge-option-icon">🌕</div>
+                            <span>Gold</span>
+                        </div>
+                        <div class="forge-option-item" data-forge-option="Silver Numbers" data-category="Number Colors">
+                            <div class="forge-option-icon">🌑</div>
+                            <span>Silver</span>
+                        </div>
+                        <div class="forge-option-item" data-forge-option="White Numbers" data-category="Number Colors">
+                            <div class="forge-option-icon">⚪</div>
+                            <span>White</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Container Options -->
+                <div class="forge-option-block">
+                    <h3>Container</h3>
+                    <div class="forge-options-grid">
+                        <div class="forge-option-item" data-forge-option="Coffer" data-category="Container">
+                            <div class="forge-option-icon">🧰</div>
+                            <span>Coffer</span>
+                        </div>
+                        <div class="forge-option-item" data-forge-option="Long Box" data-category="Container">
+                            <div class="forge-option-icon">📦</div>
+                            <span>Long Box</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="forge-cta">
+                <a href="#contact" class="cta-button forge-contact-button">Craft Your Custom Set</a>
             </div>
         </div>
     </section>
@@ -114,7 +221,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your quest for the perfect dice..." required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your quest for the perfect dice..." aria-label="Message field for custom dice request" tabindex="0" required></textarea>
                         </div>
                         <button type="submit" class="submit-button">Send Message</button>
                     </form>

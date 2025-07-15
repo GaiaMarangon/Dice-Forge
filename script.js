@@ -4,6 +4,7 @@ let contactData = null;
 let siteImages = null;
 let siteConfig = null;
 let colorThemes = null;
+let forgeOptions = null;
 let currentTheme = 'tavern';
 
 // Load YAML configuration
@@ -18,6 +19,9 @@ async function loadConfiguration() {
         siteImages = config.site_images;
         siteConfig = config.site_config;
         colorThemes = config.color_themes;
+        forgeOptions = config.forge_options;
+        
+        console.log('Configuration loaded, forgeOptions:', forgeOptions);
         
         // Set dynamic title
         setRandomTitle();
@@ -33,6 +37,9 @@ async function loadConfiguration() {
         
         // Render portfolio
         renderPortfolio();
+        
+        // Setup forge options (includes rendering)
+        setupForgeOptions();
     } catch (error) {
         console.error('Error loading configuration:', error);
         // Load fallback data if YAML fails
@@ -218,15 +225,31 @@ function applyTheme(themeName) {
         root.style.setProperty('--text-color', theme.text);
         root.style.setProperty('--card-bg', theme.card_bg);
         
+        // Update RGB values for colors (needed for forge section effects)
+        root.style.setProperty('--accent-color-rgb', hexToRgb(theme.accent));
+        root.style.setProperty('--primary-color-rgb', hexToRgb(theme.primary));
+        root.style.setProperty('--secondary-color-rgb', hexToRgb(theme.secondary));
+        root.style.setProperty('--card-bg-rgb', hexToRgb(theme.card_bg));
+        
         // Set light text colors based on theme
         if (theme.text === '#ffffff') {
             // Dark theme - use lighter text colors
             root.style.setProperty('--light-text', '#ffffff');
             root.style.setProperty('--muted-text', '#cccccc');
+            
+            // Additional adjustments for dark theme
+            root.style.setProperty('--forge-text', '#ffffff');
+            root.style.setProperty('--forge-item-bg', 'rgba(70, 70, 70, 0.7)');
+            root.style.setProperty('--forge-heading', '#e0e0e0');
         } else {
             // Light theme - use traditional light colors
             root.style.setProperty('--light-text', '#f4f1e8');
             root.style.setProperty('--muted-text', darkenColor(theme.background, 15));
+            
+            // Reset forge-specific variables for light theme
+            root.style.setProperty('--forge-text', theme.text);
+            root.style.setProperty('--forge-item-bg', `rgba(${hexToRgb(theme.card_bg)}, 0.5)`);
+            root.style.setProperty('--forge-heading', theme.primary);
         }
         
         // Generate lighter shades for gradients
@@ -256,6 +279,24 @@ function lightenColor(color, percent) {
 // Helper function to darken colors
 function darkenColor(color, percent) {
     return lightenColor(color, -percent);
+}
+
+// Convert hex color to RGB values
+function hexToRgb(hex) {
+    // Remove # if present
+    hex = hex.replace(/^#/, '');
+    
+    // Convert 3-digit hex to 6-digits
+    if (hex.length === 3) {
+        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    
+    // Extract RGB components
+    const r = parseInt(hex.substring(0, 2), 16);
+    const g = parseInt(hex.substring(2, 4), 16);
+    const b = parseInt(hex.substring(4, 6), 16);
+    
+    return `${r}, ${g}, ${b}`;
 }
 
 // Render theme options
@@ -351,44 +392,85 @@ function openModal(diceSet) {
     const modal = document.getElementById('dice-modal');
     const modalBody = document.getElementById('modal-body');
     
+    // Apply custom color palette if available
+    if (diceSet.color_palette) {
+        const root = document.documentElement;
+        root.style.setProperty('--modal-primary-color', diceSet.color_palette.primary);
+        root.style.setProperty('--modal-secondary-color', diceSet.color_palette.secondary);
+        root.style.setProperty('--modal-accent-color', diceSet.color_palette.accent);
+        root.style.setProperty('--modal-bg-color', diceSet.color_palette.modal_bg);
+        root.style.setProperty('--modal-text-color', diceSet.color_palette.text);
+    }
+    
     // Create modal content
     let galleryImages = '';
     if (diceSet.images.individual) {
         diceSet.images.individual.forEach(img => {
+            // Extract dice type from the image path (d20, d12, d8, d6, d4_1, etc)
+            let diceType = "";
+            if (img !== "placeholder") {
+                const imgPath = img.toLowerCase();
+                if (imgPath.includes("d100")) diceType = "D100";
+                else if (imgPath.includes("d20")) diceType = "D20";
+                else if (imgPath.includes("d12")) diceType = "D12";
+                else if (imgPath.includes("d8")) diceType = "D8";
+                else if (imgPath.includes("d6")) diceType = "D6";
+                else if (imgPath.includes("d4_1")) diceType = "D4 (1)";
+                else if (imgPath.includes("d4_2")) diceType = "D4 (2)";
+                else if (imgPath.includes("d4_3")) diceType = "D4 (3)";
+                else if (imgPath.includes("d4.")) diceType = "D4";
+            }
+            
+            // Get custom styles for this dice set if available
+            let customStyles = '';
+            if (diceSet.color_palette && diceSet.color_palette.accent) {
+                // Create a custom style for this specific set
+                customStyles = `style="--dice-label-color: ${diceSet.color_palette.accent};"`;
+            }
+            
             galleryImages += img === "placeholder" ? 
-                '<div class="placeholder-image" style="height: 200px;"><span>Individual Die Image</span></div>' :
-                `<img src="${img}" alt="Individual die" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">`;
+                '<div class="placeholder-image" style="height: 200px; aspect-ratio: 1/1;"><span>Individual Die Image</span></div>' :
+                `<div style="position: relative; display: inline-block;" ${customStyles}>
+                    <img src="${img}" alt="Individual die">
+                    ${diceType ? `<div class="dice-type-label">${diceType}</div>` : ''}
+                </div>`;
         });
     }
     
     let containerImages = '';
     if (diceSet.images.container) {
-        containerImages = '<h4>Custom Container</h4><div class="modal-gallery">';
+        containerImages = '<h4>Custom Container</h4><div class="modal-gallery container-gallery">';
         diceSet.images.container.forEach(img => {
             containerImages += img === "placeholder" ? 
-                '<div class="placeholder-image" style="height: 200px;"><span>Container Image</span></div>' :
-                `<img src="${img}" alt="Container" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">`;
+                '<div class="placeholder-image" style="height: 200px; aspect-ratio: 1/1;"><span>Container Image</span></div>' :
+                `<img src="${img}" alt="Container">`;
         });
         containerImages += '</div>';
     }
     
     const videoSection = diceSet.video === "placeholder" ? 
-        '<div class="modal-video"><div class="placeholder-image" style="height: 300px;"><span>Video Placeholder</span></div></div>' :
+        '<div class="modal-video"><div class="placeholder-image" style="height: 220px; aspect-ratio: 1/1; max-width: 220px;"><span>Video Placeholder</span></div></div>' :
         `<div class="modal-video"><video controls><source src="${diceSet.video}" type="video/mp4">Your browser does not support the video tag.</video></div>`;
     
     modalBody.innerHTML = `
         <h2>${diceSet.name}</h2>
-        <p style="font-size: 1.1rem; color: var(--secondary-color); margin-bottom: 2rem;">${diceSet.description}</p>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">${diceSet.description}</p>
         
-        <h3>Complete Set</h3>
-        <div style="margin-bottom: 2rem;">
-            ${diceSet.images.complete_set === "placeholder" ? 
-                '<div class="placeholder-image" style="height: 300px;"><span>Complete Set Image</span></div>' :
-                `<img src="${diceSet.images.complete_set}" alt="Complete set" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">`
-            }
+        <div class="set-and-video-container">
+            <div>
+                <h3>Complete Set</h3>
+                <div class="complete-set-container">
+                    ${diceSet.images.complete_set === "placeholder" ? 
+                        '<div class="placeholder-image" style="height: 220px; aspect-ratio: 1/1; max-width: 220px;"><span>Complete Set Image</span></div>' :
+                        `<img src="${diceSet.images.complete_set}" alt="Complete set" class="complete-set-image">`
+                    }
+                </div>
+            </div>
+            <div>
+                <h3>Showcase Video</h3>
+                ${videoSection}
+            </div>
         </div>
-        
-        ${videoSection}
         
         <h4>Individual Dice</h4>
         <div class="modal-gallery">
@@ -397,11 +479,31 @@ function openModal(diceSet) {
         
         ${containerImages}
         
-        <div style="margin-top: 2rem;">
-            <h4>Features</h4>
-            <ul style="margin-top: 1rem;">
-                ${diceSet.features.map(feature => `<li>${feature}</li>`).join('')}
-            </ul>
+        <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex: 1; min-width: 250px;">
+                <h4>Features</h4>
+                <ul style="margin-top: 1rem;">
+                    ${diceSet.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+            </div>
+            
+            ${diceSet.measurements ? `
+            <div style="flex: 1; min-width: 250px;">
+                <h4>Dice Measurements</h4>
+                <ul style="margin-top: 1rem;">
+                    ${diceSet.measurements.map(measurement => `<li>${measurement}</li>`).join('')}
+                </ul>
+            </div>
+            ` : ''}
+
+            ${diceSet.container_measurements ? `
+            <div style="flex: 1; min-width: 250px;">
+                <h4>${diceSet.container_type === 'coffer' ? 'Coffer Measurements' : 'Long Box Measurements'}</h4>
+                <ul style="margin-top: 1rem;">
+                    ${diceSet.container_measurements.map(measurement => `<li>${measurement}</li>`).join('')}
+                </ul>
+            </div>
+            ` : ''}
         </div>
     `;
     
@@ -411,6 +513,14 @@ function openModal(diceSet) {
 // Close modal
 function closeModal() {
     document.getElementById('dice-modal').style.display = 'none';
+    
+    // Reset custom modal colors
+    const root = document.documentElement;
+    root.style.removeProperty('--modal-primary-color');
+    root.style.removeProperty('--modal-secondary-color');
+    root.style.removeProperty('--modal-accent-color');
+    root.style.removeProperty('--modal-bg-color');
+    root.style.removeProperty('--modal-text-color');
 }
 
 // Mobile navigation toggle
@@ -443,9 +553,169 @@ function handleContactForm(event) {
 function smoothScroll(target) {
     const element = document.querySelector(target);
     if (element) {
-        element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+        // For form elements like the message textarea, ensure it's properly visible
+        if (target === '#message') {
+            // First scroll to contact section to ensure it's visible
+            document.querySelector('#contact').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Add a small delay to ensure the contact section is in view before focusing on textarea
+            setTimeout(() => {
+                // Then scroll to the message textarea for precise positioning
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // Focus on the textarea and add highlight effect
+                element.focus();
+                element.classList.add('highlight-focus');
+                
+                // Remove the highlight class after animation completes
+                setTimeout(() => {
+                    element.classList.remove('highlight-focus');
+                }, 1600);
+            }, 400);
+        } else {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+}
+
+// Render the forge options from YAML config
+function renderForgeOptions() {
+    console.log('renderForgeOptions called, forgeOptions:', forgeOptions);
+    
+    if (!forgeOptions) {
+        console.error('No forge options available');
+        return;
+    }
+    
+    const forgeOptionsContainer = document.querySelector('.forge-options');
+    if (!forgeOptionsContainer) {
+        console.error('Forge options container not found');
+        return;
+    }
+    
+    // Clear any existing content
+    forgeOptionsContainer.innerHTML = '';
+    
+    // Create blocks for each category
+    Object.keys(forgeOptions).forEach(categoryKey => {
+        const category = forgeOptions[categoryKey];
+        
+        // Create category block
+        const blockEl = document.createElement('div');
+        blockEl.className = 'forge-option-block';
+        
+        // Create heading
+        const headingEl = document.createElement('h3');
+        headingEl.textContent = category.title;
+        blockEl.appendChild(headingEl);
+        
+        // Create options grid
+        const gridEl = document.createElement('div');
+        gridEl.className = 'forge-options-grid';
+        
+        // Add options
+        category.options.forEach(option => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'forge-option-item';
+            itemEl.setAttribute('data-forge-option', option.name);
+            itemEl.setAttribute('data-category', category.title);
+            
+            // Create icon
+            const iconEl = document.createElement('div');
+            iconEl.className = 'forge-option-icon';
+            iconEl.textContent = option.icon;
+            
+            // Create text
+            const textEl = document.createElement('span');
+            textEl.textContent = option.name;
+            
+            // Add tooltip for description
+            itemEl.title = option.description;
+            
+            // Assemble the option item
+            itemEl.appendChild(iconEl);
+            itemEl.appendChild(textEl);
+            gridEl.appendChild(itemEl);
+        });
+        
+        // Append grid to block
+        blockEl.appendChild(gridEl);
+        
+        // Append block to container
+        forgeOptionsContainer.appendChild(blockEl);
+    });
+}
+
+// Handle Forge Options Selection
+function setupForgeOptions() {
+    // Render forge options first
+    renderForgeOptions();
+    
+    // Then set up event handlers
+    const forgeOptionItems = document.querySelectorAll('.forge-option-item');
+    const messageTextarea = document.getElementById('message');
+    
+    // Track selected options
+    let selectedOptions = [];
+    
+    forgeOptionItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const option = this.getAttribute('data-forge-option');
+            const category = this.getAttribute('data-category');
+            
+            // Toggle selection
+            this.classList.toggle('selected');
+            
+            // Update selected options
+            if (this.classList.contains('selected')) {
+                selectedOptions.push({ category, option });
+            } else {
+                selectedOptions = selectedOptions.filter(
+                    opt => !(opt.category === category && opt.option === option)
+                );
+            }
+        });
+    });
+    
+    // Contact button click handler
+    const forgeContactButton = document.querySelector('.forge-contact-button');
+    if (forgeContactButton) {
+        forgeContactButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            // Create forge message if options are selected
+            if (selectedOptions.length > 0) {
+                let forgeMessage = "Hi there Artisan!\n\nI'd love to have a custom dice set made with these features:\n\n";
+                
+                // Group selected options by category
+                const groupedOptions = {};
+                selectedOptions.forEach(opt => {
+                    if (!groupedOptions[opt.category]) {
+                        groupedOptions[opt.category] = [];
+                    }
+                    groupedOptions[opt.category].push(opt.option);
+                });
+                
+                // Add each category and selected options to the message
+                for (const category in groupedOptions) {
+                    forgeMessage += `• ${category}: ${groupedOptions[category].join(', ')}\n`;
+                }
+                
+                // Set the message in the contact form
+                messageTextarea.value = forgeMessage;
+            }
+            
+            // Scroll to message textarea in the contact form
+            smoothScroll('#message');
         });
     }
 }
@@ -510,4 +780,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.style.background = 'rgba(44, 24, 16, 0.95)';
         }
     });
+    
+    // Setup forge options
+    setupForgeOptions();
 });

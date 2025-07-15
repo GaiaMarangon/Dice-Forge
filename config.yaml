@@ -4,11 +4,11 @@
 # Site Configuration
 site_config:
   title_words:
-    - "critical hits"
-    - "randomness"
-    - "mysteries"
-    - "unknown"
-    - "dice"
+    - "Critical Hits"
+    - "Randomness"
+    - "Mysteries"
+    - "Unknown"
+    - "Dice"
     - "Partial Differential dicE"
 
 # Color Themes
@@ -40,7 +40,7 @@ color_themes:
   shadow:
     name: "Shadow Realm"
     primary: "#2c1810"
-    secondary: "#4a148c"
+    secondary: "#8C6AB6" #4a148c
     accent: "#9c27b0"
     background: "#1a1a1a"
     text: "#ffffff"
@@ -48,24 +48,41 @@ color_themes:
 
 # Site Images
 site_images:
-  hero: "images/forger.jpg"
+  hero: "images/forgeSetting_side.jpg"
   about: "images/forger.jpg"
 
 # Contact Information
 contact:
-  email: "your.email@example.com"
+  email: "gaiadiceforger@gmail.com"
 
 # Dice Sets Collection
 dice_sets:
-  - name: "Pink salt gem"
-    description: "Wonderful pink and white dice"
+  - name: "Pink Salt Gems Set"
+    description: "Crystalline pink and white dice with silver accents. Like fragments of Himalayan salt crystals, these dice carry the energy of ancient mountains."
+    color_palette:
+      primary: "#e91e63"
+      secondary: "#f8bbd9" 
+      accent: "#ffc1cc"
+      background: "#fce4ec"
+      text: "#880e4f"
+      modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: Crystal pink and solid white"
-      - "Numbering: white"
-      - "Inserts: silver foil"
+      - "9-piece set"
+      - "Dual Colors" 
+      - "Crystal pink and solid white"
+      - "White numbers"
+      - "Silver foil inserts"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
     images:
-      main: "images/sets/rosa/set.jpg"
+      main: "images/sets/rosa/dice.jpg"
       individual: 
         - "images/sets/rosa/d100.jpg"
         - "images/sets/rosa/d20.jpg"
@@ -78,15 +95,38 @@ dice_sets:
       complete_set: "images/sets/rosa/dice.jpg"
     video: "images/sets/rosa/set.mp4"
 
-  - name: "Shiny leaf"
-    description: "Light green dice glittering with gentle sparkles."
+  - name: "Shiny Leaves Set"
+    description: "Light green dice adorned with golden glitter sparkles. Each roll captures the sunlight dancing through spring leaves."
+    color_palette:
+      primary: "#4caf50"
+      secondary: "#81c784"
+      accent: "#c8e6c9"
+      background: "#e8f5e9"
+      text: "#1b5e20"
+      modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: Crystal light green"
-      - "Numbering: white"
-      - "Inserts: small golden glitters"
+      - "9-piece set, coffer container"
+      - "Single Color" 
+      - "Crystal light green"
+      - "White numbers"
+      - "Golden glitters"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "coffer"
+    container_measurements:
+      - "Length: 8.2cm"
+      - "Height: 5.5cm"
+      - "Width: 5.5cm"
+
     images:
-      main: "images/sets/verdeBrillantini/set.jpg"
+      main: "images/sets/verdeBrillantini/dice.jpg"
       individual: 
         - "images/sets/verdeBrillantini/d100.jpg"
         - "images/sets/verdeBrillantini/d20.jpg"
@@ -102,14 +142,36 @@ dice_sets:
         - "images/sets/verdeBrillantini/coffer_openDiceFront.jpg"
     video: "images/sets/verdeBrillantini/set.mp4" 
 
-  - name: "Bloody Ink"
-    description: "Bloody-red dice with black inky shades."
+  - name: "Bloody Ink Set"
+    description: "Deep crimson dice with swirling black veins throughout. Like ancient scrolls written in blood, these dice tell tales of dark pacts and forbidden magic."
+    color_palette:
+      primary: "#d32f2f"
+      secondary: "#424242"
+      accent: "#ffab91"
+      background: "#1a1a1a"
+      text: "#fff"
+      modal_bg: "#2d2d2d"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: Crystal red with solid black shades"
-      - "Numbering: golden"
+      - "9-piece set, coffer container"
+      - "Veined Color"
+      - "Crystal red, solid black veins"
+      - "Golden numbers"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "coffer"
+    container_measurements:
+      - "Length: 8.2cm"
+      - "Height: 5.5cm"
+      - "Width: 5.5cm"
     images:
-      main: "images/sets/rossoNero/set.jpg"
+      main: "images/sets/rossoNero/dice.jpg"
       individual: 
         - "images/sets/rossoNero/d100.jpg"
         - "images/sets/rossoNero/d20.jpg"
@@ -125,15 +187,37 @@ dice_sets:
         - "images/sets/rossoNero/coffer_openDiceTop.jpg"
     video: "images/sets/rossoNero/set.mp4"
 
-  - name: "Tangerine Dusk"
-    description: "Tangerine and blue dice."
+  - name: "Tangerine Dusk Set"
+    description: "Vibrant orange and deep blue dice with metallic foil inclusions. They capture the magical moment when the setting sun meets the rising night sky."
+    color_palette:
+      primary: "#ff5722"
+      secondary: "#2196f3"
+      accent: "#ffc947"
+      background: "#fff3e0"
+      text: "#e65100"
+      modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: Crystal orange and crystal blue"
-      - "Numbering: golden and silver"
-      - "Inserts: silver foil"
+      - "9-piece set, long box container"
+      - "Dual Colors"
+      - "Crystal orange, crystal blue"
+      - "Golden and silver numbers"
+      - "Silver foil inclusions"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "long box"
+    container_measurements:
+      - "Length: 18cm"
+      - "Height: 3.5cm"
+      - "Width: 4.3cm"
     images:
-      main: "images/sets/bluArancioni/set.jpg"
+      main: "images/sets/bluArancioni/dice.jpg"
       individual: 
         - "images/sets/bluArancioni/d100.jpg"
         - "images/sets/bluArancioni/d20.jpg"
@@ -147,18 +231,40 @@ dice_sets:
       container: 
         - "images/sets/bluArancioni/longBox_openDiceFront.jpg"
         - "images/sets/bluArancioni/longBox_closedFront.jpg"
-    video: "images/sets/bluArancioni/set.mp4" # "images/sets/bluArancioni/longBox_filled.mp4"
+    video: "images/sets/bluArancioni/set.mp4"
     
 
-  - name: "Creamy sky"
-    description: "Clear blue shiny sky with creamy clouds dice."
+  - name: "Creamy Sky Set"
+    description: "Crystal blue dice with swirling white cloud patterns. Each roll feels like casting your fate to the endless summer skies above."
+    color_palette:
+      primary: "#03a9f4"
+      secondary: "#e1f5fe"
+      accent: "#81d4fa"
+      background: "#f0f8ff"
+      text: "#01579b"
+      modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: Crystal light blue and solid white"
-      - "Numbering: white"
-      - "Inserts: light mica powder (in blue and white)"
+      - "9-piece set, coffer container"
+      - "Dual Colors"
+      - "Crystal light blue, solid white"
+      - "White numbers"
+      - "Mica powder (in blue and white)"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "coffer"
+    container_measurements:
+      - "Length: 8.2cm"
+      - "Height: 5.5cm"
+      - "Width: 5.5cm"
     images:
-      main: "images/sets/nuvola/set.jpg"
+      main: "images/sets/nuvola/dice.jpg"
       individual: 
         - "images/sets/nuvola/d100.jpg"
         - "images/sets/nuvola/d20.jpg"
@@ -174,15 +280,37 @@ dice_sets:
         - "images/sets/nuvola/coffer_openDiceFront.jpg"
     video: "images/sets/nuvola/set.mp4"
     
-  - name: "Desert Dune"
-    description: "Layered desertic dice.."
+  - name: "Desert Dune Set"
+    description: "Layered dice in gold, copper and bronze tones. Like the shifting sands of ancient deserts, they hold the mysteries of forgotten civilizations."
+    color_palette:
+      primary: "#d4af37"
+      secondary: "#cd853f"
+      accent: "#daa520"
+      background: "#fdf5e6"
+      text: "#8b4513"
+      modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: golden, copper, bronze"
-      - "Numbering: golden"
-      - "Inserts: mica powder"
+      - "9-piece set, long box container"
+      - "Dual Colors" 
+      - "Golden, copper, bronze"
+      - "Golden numbers"
+      - "Mica powder"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "long box"
+    container_measurements:
+      - "Length: 18cm"
+      - "Height: 3.5cm"
+      - "Width: 4.3cm"
     images:
-      main: "images/sets/deserto/set.jpg"
+      main: "images/sets/deserto/dice.jpg"
       individual: 
         - "images/sets/deserto/d100.jpg"
         - "images/sets/deserto/d20.jpg"
@@ -196,17 +324,34 @@ dice_sets:
       container: 
         - "images/sets/deserto/longBox_openDiceFront.jpg"
         - "images/sets/deserto/longBox_closedDiago.jpg"
-    video: "images/sets/deserto/set.mp4" # "images/sets/deserto/longBox_filled.mp4"
+    video: "images/sets/deserto/set.mp4"
 
   - name: "Forest Guardian Set"
     description: "Sage green with crystal glares and silver numbering. Inspired by ancient forests and the mystical creatures that dwell within them."
+    color_palette:
+      primary: "#689f38"
+      secondary: "#8bc34a"
+      accent: "#c5e1a5"
+      background: "#f1f8e9"
+      text: "#33691e"
+      modal_bg: "#fff"
     features:
-      - "Full 9-piece set (d4x3, d6, d8, d10, d12, d20, d100)"
-      - "Colors: solid sage green and crystal green"
-      - "Numbering: silver"
-      - "Inserts: mica powder in sage green"
+      - "9-piece set"
+      - "Dual Colors"
+      - "Solid sage green, crystal green"
+      - "Silver Numbers"
+      - "Mica powder (in sage green)"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
     images:
-      main: "images/sets/verdeSalvia/set.jpg"
+      main: "images/sets/verdeSalvia/dice.jpg"
       individual: 
         - "images/sets/verdeSalvia/d100.jpg"
         - "images/sets/verdeSalvia/d20.jpg"
@@ -219,14 +364,29 @@ dice_sets:
       complete_set: "images/sets/verdeSalvia/dice.jpg"
     video: "images/sets/verdeSalvia/set.mp4" 
 
-  - name: "Purple glow Set"
-    description: "Deep purple with green fluorescent inclusions. Perfect for rogues, warlocks, and any character who walks in the shadows."
+  - name: "Purple Glow Set"
+    description: "Deep purple with green fluorescent shades. Perfect for rogues, warlocks, and any character who walks in the shadows."
+    color_palette:
+      primary: "#7b1fa2"
+      secondary: "#4caf50"
+      accent: "#ba68c8"
+      background: "#1a1a1a"
+      text: "#fff"
+      modal_bg: "#2d2d2d"
     features:
-      - "Full 7-piece set"
-      - "Colors: solid sage green and crystal green"
-      - "Numbering: silver and golden (on lowest and highest)"
+      - "7-piece set"
+      - "Dual Colors"
+      - "Dark purple, fluorescent crystal green"
+      - "Silver numbers"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4: 15mm edge"
     images:
-      main: "images/sets/violaFluo/set.jpg"
+      main: "images/sets/violaFluo/dice.jpg"
       individual: 
         - "images/sets/violaFluo/d100.jpg"
         - "images/sets/violaFluo/d20.jpg"
@@ -235,4 +395,69 @@ dice_sets:
         - "images/sets/violaFluo/d6.jpg"
         - "images/sets/violaFluo/d4.jpg"
       complete_set: "images/sets/violaFluo/dice.jpg"
-    video: "images/sets/violaFluo/set.mp4" 
+    video: "images/sets/violaFluo/set.mp4"
+
+# Forge Options Configuration
+forge_options:
+  # Each forge option can have custom icons if needed
+  dice_coloration:
+    title: "Dice Coloration"
+    options:
+      - name: "Single Color"
+        icon: "🎨"
+        description: "Solid single color throughout"
+      - name: "Dual Color"
+        icon: "🎭"
+        description: "Two distinct colors blended or separated"
+      - name: "Veined Color" 
+        icon: "🌊"
+        description: "Base color with veined patterns throughout"
+        
+  inserts:
+    title: "Inserts"
+    options:
+      - name: "Glitter"
+        icon: "✨"
+        description: "Sparkling glitter embedded in the resin"
+      - name: "Mica Powder"
+        icon: "💎"
+        description: "Metallic effect with mica powder"
+      - name: "Metal Inserts"
+        icon: "🥇"
+        description: "Gold, silver, or bronze leaf embedded in the resin"
+        
+  colors:
+    title: "Colors"
+    options:
+      - name: "Opaque Colors"
+        icon: "⚪"
+        description: "Solid opaque options: white, black"
+      - name: "Fluorescent Colors"
+        icon: "🌟"
+        description: "Bright fluorescent options: pink, yellow"
+      - name: "Transparent Colors"
+        icon: "🔍"
+        description: "Clear colors that can be combined for custom effects"
+        
+  number_colors:
+    title: "Number Colors"
+    options:
+      - name: "Gold Numbers"
+        icon: "🌕"
+        description: "Shimmering gold numbering"
+      - name: "Silver Numbers"
+        icon: "🌑"
+        description: "Elegant silver numbering"
+      - name: "White Numbers"
+        icon: "⚪"
+        description: "Classic white numbering"
+        
+  container:
+    title: "Container"
+    options:
+      - name: "Coffer"
+        icon: "🧰"
+        description: "Square coffer to hold your complete dice set"
+      - name: "Long Box"
+        icon: "📦"
+        description: "Elongated box for displaying dice in a row"

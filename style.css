@@ -8,6 +8,8 @@
     --card-bg: #ffffff;
     --light-text: #f4f1e8;
     --muted-text: #e8dcc0;
+    --accent-color-rgb: 212, 175, 55; /* RGB values for accent color */
+    --primary-color-rgb: 44, 24, 16; /* RGB values for primary color */
 }
 
 /* Reset and Base Styles */
@@ -292,7 +294,7 @@ body {
 }
 
 .title-dynamic:hover {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3" fill="%23d4af37" stroke="%232c1810" stroke-width="2"/><circle cx="7" cy="7" r="2" fill="%232c1810"/><circle cx="17" cy="17" r="2" fill="%232c1810"/><circle cx="12" cy="12" r="2" fill="%232c1810"/><circle cx="7" cy="17" r="2" fill="%232c1810"/><circle cx="17" cy="7" r="2" fill="%232c1810"/></svg>'), pointer;
+    cursor: pointer;
     transform: scale(1.05);
     filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
@@ -641,6 +643,19 @@ body {
     background: var(--card-bg);
 }
 
+/* Highlight effect for textarea when targeted by scroll */
+.form-group textarea.highlight-focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px var(--accent-color);
+    animation: textarea-highlight 1.5s;
+}
+
+@keyframes textarea-highlight {
+    0% { border-color: var(--text-color); box-shadow: 0 0 5px var(--text-color); }
+    50% { border-color: var(--accent-color); box-shadow: 0 0 15px var(--accent-color); }
+    100% { border-color: var(--accent-color); box-shadow: 0 0 8px var(--accent-color); }
+}
+
 .submit-button {
     width: 100%;
     padding: 15px;
@@ -676,63 +691,196 @@ body {
 }
 
 .modal-content {
-    background: linear-gradient(135deg, var(--background-color), var(--card-bg));
-    margin: 5% auto;
-    padding: 0;
+    background: linear-gradient(135deg, var(--modal-bg-color, var(--background-color)), var(--modal-bg-color, var(--card-bg)));
+    margin: 2% auto;
+    padding: 1.5rem;
     border-radius: 20px;
-    width: 90%;
-    max-width: 900px;
-    max-height: 80vh;
+    width: 95%;
+    max-width: 1000px;
+    max-height: 85vh;
     overflow-y: auto;
     position: relative;
-    border: 3px solid var(--accent-color);
+    border: 3px solid var(--modal-accent-color, var(--accent-color));
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    color: var(--modal-text-color, var(--text-color));
+    /* Stili personalizzati per la scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--modal-accent-color, var(--accent-color)) transparent;
+}
+
+/* Webkit scrollbar per Chrome/Safari */
+.modal-content::-webkit-scrollbar {
+    width: 12px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--modal-accent-color, var(--accent-color));
+    border-radius: 20px;
+    border: 2px solid var(--modal-bg-color, var(--background-color));
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--modal-primary-color, var(--primary-color));
 }
 
 .close {
-    position: absolute;
+    position: fixed;
     top: 15px;
-    right: 25px;
-    color: var(--secondary-color);
+    right: 15px;
+    color: var(--modal-secondary-color, var(--secondary-color));
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
     z-index: 2001;
-    background: var(--background-color);
+    background: var(--modal-bg-color, var(--background-color));
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--modal-accent-color, var(--accent-color));
+    transition: all 0.3s ease;
 }
 
 .close:hover {
-    color: var(--text-color);
-    background: var(--accent-color);
+    color: var(--modal-text-color, var(--text-color));
+    background: var(--modal-accent-color, var(--accent-color));
+    transform: scale(1.1);
 }
 
 .modal-body {
     padding: 2rem;
+    margin: 0;
+    background: var(--modal-bg-color, var(--background-color));
+    border-radius: 15px;
+    border: 2px solid var(--modal-accent-color, var(--accent-color));
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenitore per set completo e video affiancati */
+.set-and-video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    max-width: 600px;
+    justify-items: start;
+}
+
+.set-and-video-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.container-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .modal-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
     margin: 2rem 0;
+}
+
+.modal-gallery > div {
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.modal-gallery > div:hover {
+    transform: scale(1.05);
+    z-index: 5;
+}
+
+/* Styles for modal dice items */
+.modal-gallery img {
+    display: block;
+    object-fit: cover;
+}
+
+.modal-gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid var(--modal-accent-color, var(--accent-color));
 }
 
 .modal-video {
     width: 100%;
-    margin: 2rem 0;
+    margin: 0;
+    display: block;
 }
 
 .modal-video video {
+    max-width: 220px;
     width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 15px;
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--modal-accent-color, var(--accent-color));
+}
+
+/* Stili per immagini singole nella modal */
+.modal-body img:not(.modal-gallery img) {
+    border-radius: 10px;
+    border: 2px solid var(--modal-accent-color, var(--accent-color));
+}
+
+/* Stile specifico per l'immagine del set completo */
+.complete-set-image {
+    max-width: 220px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid var(--modal-accent-color, var(--accent-color));
+}
+
+.complete-set-container {
+    display: block;
+    margin: 0;
+    width: 100%;
+}
+
+.modal-body h2 {
+    color: var(--modal-primary-color, var(--primary-color));
+    margin-bottom: 1rem;
+}
+
+.modal-body h3, .modal-body h4 {
+    color: var(--modal-secondary-color, var(--secondary-color));
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.modal-body p {
+    color: var(--modal-text-color, var(--text-color));
+}
+
+.modal-body ul {
+    padding-left: 1.5rem;
+    margin-left: 0;
+    list-style-position: outside;
+}
+
+.modal-body li {
+    margin-bottom: 0.5rem;
+    padding-left: 0;
 }
 
 /* Footer */
@@ -742,6 +890,268 @@ footer {
     text-align: center;
     padding: 2rem 0;
     border-top: 3px solid var(--accent-color);
+}
+
+/* Forge Section */
+.forge {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--background-color), var(--card-bg));
+    position: relative;
+}
+
+.forge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0 0h100v100H0z" fill="none"/><circle cx="25" cy="25" r="2" fill="%23d4af37" opacity="0.1"/><circle cx="75" cy="75" r="2" fill="%23d4af37" opacity="0.1"/><circle cx="75" cy="25" r="1.5" fill="%238b4513" opacity="0.1"/><circle cx="25" cy="75" r="1.5" fill="%238b4513" opacity="0.1"/></svg>');
+    background-size: 100px 100px;
+    pointer-events: none;
+}
+
+.forge h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.forge-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.forge-option-block {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(var(--accent-color-rgb), 0.05) 100%);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px rgba(var(--primary-color-rgb, 0, 0, 0), 0.08);
+    border: 1px solid rgba(var(--accent-color-rgb), 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.forge-option-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    opacity: 0.7;
+}
+
+.forge-option-block:hover {
+    box-shadow: 0 15px 30px rgba(var(--primary-color-rgb, 0, 0, 0), 0.12);
+    transform: translateY(-5px);
+}
+
+.forge-option-block h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--forge-heading, var(--primary-color));
+    border-bottom: 1px solid rgba(var(--accent-color-rgb), 0.5);
+    padding-bottom: 0.8rem;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(var(--primary-color-rgb, 0, 0, 0), 0.1);
+}
+
+.forge-options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.forge-option-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.85rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid transparent;
+    margin-bottom: 0.6rem;
+    background-color: var(--forge-item-bg, rgba(var(--card-bg-rgb, 255, 255, 255), 0.5));
+    color: var(--forge-text, var(--text-color));
+}
+
+.forge-option-item:hover {
+    background-color: rgba(var(--accent-color-rgb), 0.08);
+    transform: translateX(5px);
+    border: 1px solid rgba(var(--accent-color-rgb), 0.3);
+}
+
+.forge-option-item:hover .forge-option-icon {
+    transform: scale(1.2);
+}
+
+.forge-option-icon {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--accent-color);
+    box-shadow: 0 5px 10px rgba(var(--primary-color-rgb, 0, 0, 0), 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+.forge-option-item:hover .forge-option-icon::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.1) 0%, transparent 70%);
+    border: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: sun-rays 2s infinite linear;
+    z-index: -1;
+}
+
+.forge-option-item:hover .forge-option-icon::before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid rgba(var(--accent-color-rgb), 0.7);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: rotate-rays 8s infinite linear;
+    z-index: -1;
+}
+
+.forge-option-item.selected {
+    background-color: rgba(var(--accent-color-rgb), 0.15);
+    box-shadow: 0 0 0 1px var(--accent-color);
+    transform: translateX(5px);
+}
+
+.forge-option-item.selected::after {
+    content: '✓';
+    position: absolute;
+    right: 1rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.forge-option-item.selected .forge-option-icon {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: var(--background-color);
+    box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.6);
+}
+
+@keyframes sun-rays {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--accent-color-rgb), 0.7),
+                    0 0 0 10px rgba(var(--accent-color-rgb), 0.5),
+                    0 0 0 20px rgba(var(--accent-color-rgb), 0.3);
+        opacity: 1;
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(var(--accent-color-rgb), 0.5),
+                    0 0 0 20px rgba(var(--accent-color-rgb), 0.3),
+                    0 0 0 30px rgba(var(--accent-color-rgb), 0);
+        opacity: 0.2;
+    }
+}
+
+@keyframes rotate-rays {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.forge-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.forge-contact-button {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: var(--background-color);
+    border: none;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1.5px;
+    font-size: 1.1rem;
+    padding: 15px 35px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.forge-contact-button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--accent-color), transparent, var(--accent-color));
+    z-index: -1;
+    border-radius: 10px;
+    animation: rotate-border 3s linear infinite;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.forge-contact-button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(var(--accent-color-rgb), 0.5);
+}
+
+/* Tema scuro - miglioramenti specifici */
+[style*="--text-color: #ffffff"] .forge-option-icon {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[style*="--text-color: #ffffff"] .forge-option-block {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[style*="--text-color: #ffffff"] .forge-option-item:hover {
+    background-color: rgba(var(--accent-color-rgb), 0.25);
+    border: 1px solid rgba(var(--accent-color-rgb), 0.5);
 }
 
 /* Responsive Design */
@@ -833,8 +1243,52 @@ footer {
     }
 
     .modal-content {
-        width: 95%;
-        margin: 10% auto;
+        width: 98%;
+        margin: 5% auto;
+        max-height: 90vh;
+        padding: 1rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+        margin: 0;
+    }
+
+    .modal-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .container-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        max-width: 400px;
+        justify-items: start;
+    }
+    
+    .container-gallery img {
+        width: 75%;
+    }
+
+    .modal-video video {
+        max-width: 180px;
+    }
+
+    .complete-set-image {
+        max-width: 180px;
+    }
+
+    .set-and-video-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 300px;
+    }
+
+    .close {
+        top: 10px;
+        right: 10px;
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
     }
 
     .theme-modal-content {
@@ -844,6 +1298,15 @@ footer {
 
     .theme-options {
         grid-template-columns: 1fr;
+    }
+
+    .forge-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .forge-option-block {
+        width: 100%;
     }
 }
 
@@ -882,4 +1345,48 @@ footer {
     .theme-icon {
         font-size: 0.9rem;
     }
+}
+
+/* Individual Dice Type Labels */
+.modal-gallery img {
+    position: relative;
+}
+
+.dice-type-label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    padding: 4px 8px;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 0 10px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))), 
+                 0 0 15px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))),
+                 0 0 20px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))),
+                 1px 1px 2px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+    z-index: 10;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.modal-gallery > div:hover .dice-type-label {
+    transform: scale(1.1);
+    text-shadow: 0 0 12px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))), 
+                 0 0 18px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))),
+                 0 0 24px var(--dice-label-color, var(--modal-accent-color, var(--accent-color))),
+                 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Container images specific style */
+.container-gallery img {
+    width: 75%;
+    margin-right: 25%;
+}
+
+.container-gallery > div {
+    display: flex;
+    justify-content: flex-start;
 }

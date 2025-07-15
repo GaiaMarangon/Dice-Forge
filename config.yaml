@@ -58,7 +58,8 @@ contact:
 # Dice Sets Collection
 dice_sets:
   - name: "Pink salt gem"
-    description: "Wonderful pink and white dice"
+    # description: "Wonderful pink and white dice"
+    description: "Crystalline pink and white dice with silver accents. Like fragments of Himalayan salt crystals, these dice carry the energy of ancient mountains."
     color_palette:
       primary: "#e91e63"
       secondary: "#f8bbd9" 
@@ -87,7 +88,8 @@ dice_sets:
     video: "images/sets/rosa/set.mp4"
 
   - name: "Shiny leaf"
-    description: "Light green dice glittering with gentle sparkles."
+    # description: "Light green dice glittering with gentle sparkles."
+    description: "Light green dice adorned with golden glitter sparkles. Each roll captures the essence of sunlight dancing through spring leaves."
     color_palette:
       primary: "#4caf50"
       secondary: "#81c784"
@@ -120,7 +122,8 @@ dice_sets:
     video: "images/sets/verdeBrillantini/set.mp4" 
 
   - name: "Bloody Ink"
-    description: "Bloody-red dice with black inky shades."
+    # description: "Bloody-red dice with black inky shades."
+    description: "Deep crimson dice with swirling black veins throughout. Like ancient scrolls written in blood, these dice tell tales of dark pacts and forbidden magic."
     color_palette:
       primary: "#d32f2f"
       secondary: "#424242"
@@ -151,7 +154,8 @@ dice_sets:
     video: "images/sets/rossoNero/set.mp4"
 
   - name: "Tangerine Dusk"
-    description: "Tangerine and blue dice."
+    # description: "Tangerine and blue dice."
+    description: "Vibrant orange and deep blue dice with metallic foil inclusions. They capture the magical moment when the setting sun meets the rising night sky."
     color_palette:
       primary: "#ff5722"
       secondary: "#2196f3"
@@ -184,7 +188,8 @@ dice_sets:
     
 
   - name: "Creamy sky"
-    description: "Clear blue shiny sky with creamy clouds dice."
+    # description: "Clear blue shiny sky with creamy clouds dice."
+    description: "Crystal blue dice with swirling white cloud patterns. Each roll feels like casting your fate to the endless summer skies above."
     color_palette:
       primary: "#03a9f4"
       secondary: "#e1f5fe"
@@ -216,7 +221,8 @@ dice_sets:
     video: "images/sets/nuvola/set.mp4"
     
   - name: "Desert Dune"
-    description: "Layered desertic dice.."
+    # description: "Layered desertic dice.."
+    description: "Layered dice in gold, copper and bronze tones. Like the shifting sands of ancient deserts, they hold the mysteries of forgotten civilizations."
     color_palette:
       primary: "#d4af37"
       secondary: "#cd853f"

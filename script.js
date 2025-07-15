@@ -454,11 +454,31 @@ function openModal(diceSet) {
         
         ${containerImages}
         
-        <div style="margin-top: 2rem;">
-            <h4>Features</h4>
-            <ul style="margin-top: 1rem;">
-                ${diceSet.features.map(feature => `<li>${feature}</li>`).join('')}
-            </ul>
+        <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex: 1; min-width: 250px;">
+                <h4>Features</h4>
+                <ul style="margin-top: 1rem;">
+                    ${diceSet.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
+            </div>
+            
+            ${diceSet.measurements ? `
+            <div style="flex: 1; min-width: 250px;">
+                <h4>Dice Measurements</h4>
+                <ul style="margin-top: 1rem;">
+                    ${diceSet.measurements.map(measurement => `<li>${measurement}</li>`).join('')}
+                </ul>
+            </div>
+            ` : ''}
+
+            ${diceSet.container_measurements ? `
+            <div style="flex: 1; min-width: 250px;">
+                <h4>${diceSet.container_type === 'coffer' ? 'Coffer Measurements' : 'Long Box Measurements'}</h4>
+                <ul style="margin-top: 1rem;">
+                    ${diceSet.container_measurements.map(measurement => `<li>${measurement}</li>`).join('')}
+                </ul>
+            </div>
+            ` : ''}
         </div>
     `;
     

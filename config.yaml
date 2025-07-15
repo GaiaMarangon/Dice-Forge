@@ -58,7 +58,6 @@ contact:
 # Dice Sets Collection
 dice_sets:
   - name: "Pink salt gem"
-    # description: "Wonderful pink and white dice"
     description: "Crystalline pink and white dice with silver accents. Like fragments of Himalayan salt crystals, these dice carry the energy of ancient mountains."
     color_palette:
       primary: "#e91e63"
@@ -73,6 +72,15 @@ dice_sets:
       - "Crystal pink and solid white"
       - "White numbers"
       - "Silver foil inserts"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
     images:
       main: "images/sets/rosa/dice.jpg"
       individual: 
@@ -88,7 +96,6 @@ dice_sets:
     video: "images/sets/rosa/set.mp4"
 
   - name: "Shiny leaf"
-    # description: "Light green dice glittering with gentle sparkles."
     description: "Light green dice adorned with golden glitter sparkles. Each roll captures the essence of sunlight dancing through spring leaves."
     color_palette:
       primary: "#4caf50"
@@ -103,6 +110,20 @@ dice_sets:
       - "Crystal light green"
       - "White numbers"
       - "Golden glitters"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "coffer"
+    container_measurements:
+      - "Length: 8.2cm"
+      - "Height: 5.5cm"
+      - "Width: 5.5cm"
 
     images:
       main: "images/sets/verdeBrillantini/dice.jpg"
@@ -122,7 +143,6 @@ dice_sets:
     video: "images/sets/verdeBrillantini/set.mp4" 
 
   - name: "Bloody Ink"
-    # description: "Bloody-red dice with black inky shades."
     description: "Deep crimson dice with swirling black veins throughout. Like ancient scrolls written in blood, these dice tell tales of dark pacts and forbidden magic."
     color_palette:
       primary: "#d32f2f"
@@ -136,6 +156,20 @@ dice_sets:
       - "Veined Color"
       - "Crystal red with solid black shades"
       - "Golden numbers"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "coffer"
+    container_measurements:
+      - "Length: 8.2cm"
+      - "Height: 5.5cm"
+      - "Width: 5.5cm"
     images:
       main: "images/sets/rossoNero/dice.jpg"
       individual: 
@@ -154,7 +188,6 @@ dice_sets:
     video: "images/sets/rossoNero/set.mp4"
 
   - name: "Tangerine Dusk"
-    # description: "Tangerine and blue dice."
     description: "Vibrant orange and deep blue dice with metallic foil inclusions. They capture the magical moment when the setting sun meets the rising night sky."
     color_palette:
       primary: "#ff5722"
@@ -169,6 +202,20 @@ dice_sets:
       - "Crystal orange and crystal blue"
       - "Golden and silver numbers"
       - "Silver foil inclusions"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "long box"
+    container_measurements:
+      - "Length: 18cm"
+      - "Height: 3.5cm"
+      - "Width: 4.3cm"
     images:
       main: "images/sets/bluArancioni/dice.jpg"
       individual: 
@@ -184,11 +231,10 @@ dice_sets:
       container: 
         - "images/sets/bluArancioni/longBox_openDiceFront.jpg"
         - "images/sets/bluArancioni/longBox_closedFront.jpg"
-    video: "images/sets/bluArancioni/set.mp4" # "images/sets/bluArancioni/longBox_filled.mp4"
+    video: "images/sets/bluArancioni/set.mp4"
     
 
   - name: "Creamy sky"
-    # description: "Clear blue shiny sky with creamy clouds dice."
     description: "Crystal blue dice with swirling white cloud patterns. Each roll feels like casting your fate to the endless summer skies above."
     color_palette:
       primary: "#03a9f4"
@@ -203,6 +249,20 @@ dice_sets:
       - "Crystal light blue and solid white"
       - "White numbers"
       - "Mica powder (in blue and white)"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "coffer"
+    container_measurements:
+      - "Length: 8.2cm"
+      - "Height: 5.5cm"
+      - "Width: 5.5cm"
     images:
       main: "images/sets/nuvola/dice.jpg"
       individual: 
@@ -221,7 +281,6 @@ dice_sets:
     video: "images/sets/nuvola/set.mp4"
     
   - name: "Desert Dune"
-    # description: "Layered desertic dice.."
     description: "Layered dice in gold, copper and bronze tones. Like the shifting sands of ancient deserts, they hold the mysteries of forgotten civilizations."
     color_palette:
       primary: "#d4af37"
@@ -236,6 +295,20 @@ dice_sets:
       - "Golden, copper, bronze"
       - "Golden numbers"
       - "Mica powder"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    container_type: "long box"
+    container_measurements:
+      - "Length: 18cm"
+      - "Height: 3.5cm"
+      - "Width: 4.3cm"
     images:
       main: "images/sets/deserto/dice.jpg"
       individual: 
@@ -251,7 +324,7 @@ dice_sets:
       container: 
         - "images/sets/deserto/longBox_openDiceFront.jpg"
         - "images/sets/deserto/longBox_closedDiago.jpg"
-    video: "images/sets/deserto/set.mp4" # "images/sets/deserto/longBox_filled.mp4"
+    video: "images/sets/deserto/set.mp4"
 
   - name: "Forest Guardian Set"
     description: "Sage green with crystal glares and silver numbering. Inspired by ancient forests and the mystical creatures that dwell within them."
@@ -268,6 +341,15 @@ dice_sets:
       - "Solid sage green and crystal green"
       - "Silver Numbers"
       - "Mica powder (in sage green)"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
     images:
       main: "images/sets/verdeSalvia/dice.jpg"
       individual: 
@@ -296,6 +378,13 @@ dice_sets:
       - "Dual Colors"
       - "Dark purple and fluorescent crystal green"
       - "Silver numbers"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4: 15mm edge"
     images:
       main: "images/sets/violaFluo/dice.jpg"
       individual: 

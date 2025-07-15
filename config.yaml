@@ -154,7 +154,7 @@ dice_sets:
     features:
       - "9-piece set, coffer container"
       - "Veined Color"
-      - "Crystal red with solid black shades"
+      - "Crystal red, solid black veins"
       - "Golden numbers"
     measurements:
       - "D20: 20mm diameter"
@@ -199,7 +199,7 @@ dice_sets:
     features:
       - "9-piece set, long box container"
       - "Dual Colors"
-      - "Crystal orange and crystal blue"
+      - "Crystal orange, crystal blue"
       - "Golden and silver numbers"
       - "Silver foil inclusions"
     measurements:
@@ -246,7 +246,7 @@ dice_sets:
     features:
       - "9-piece set, coffer container"
       - "Dual Colors"
-      - "Crystal light blue and solid white"
+      - "Crystal light blue, solid white"
       - "White numbers"
       - "Mica powder (in blue and white)"
     measurements:
@@ -338,7 +338,7 @@ dice_sets:
     features:
       - "9-piece set"
       - "Dual Colors"
-      - "Solid sage green and crystal green"
+      - "Solid sage green, crystal green"
       - "Silver Numbers"
       - "Mica powder (in sage green)"
     measurements:
@@ -365,7 +365,7 @@ dice_sets:
     video: "images/sets/verdeSalvia/set.mp4" 
 
   - name: "Purple glow Set"
-    description: "Deep purple with green fluorescent inclusions. Perfect for rogues, warlocks, and any character who walks in the shadows."
+    description: "Deep purple with green fluorescent shades. Perfect for rogues, warlocks, and any character who walks in the shadows."
     color_palette:
       primary: "#7b1fa2"
       secondary: "#4caf50"
@@ -376,7 +376,7 @@ dice_sets:
     features:
       - "7-piece set"
       - "Dual Colors"
-      - "Dark purple and fluorescent crystal green"
+      - "Dark purple, fluorescent crystal green"
       - "Silver numbers"
     measurements:
       - "D20: 20mm diameter"

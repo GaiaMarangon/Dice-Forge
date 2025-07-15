@@ -406,9 +406,34 @@ function openModal(diceSet) {
     let galleryImages = '';
     if (diceSet.images.individual) {
         diceSet.images.individual.forEach(img => {
+            // Extract dice type from the image path (d20, d12, d8, d6, d4_1, etc)
+            let diceType = "";
+            if (img !== "placeholder") {
+                const imgPath = img.toLowerCase();
+                if (imgPath.includes("d100")) diceType = "D100";
+                else if (imgPath.includes("d20")) diceType = "D20";
+                else if (imgPath.includes("d12")) diceType = "D12";
+                else if (imgPath.includes("d8")) diceType = "D8";
+                else if (imgPath.includes("d6")) diceType = "D6";
+                else if (imgPath.includes("d4_1")) diceType = "D4 (1)";
+                else if (imgPath.includes("d4_2")) diceType = "D4 (2)";
+                else if (imgPath.includes("d4_3")) diceType = "D4 (3)";
+                else if (imgPath.includes("d4.")) diceType = "D4";
+            }
+            
+            // Get custom styles for this dice set if available
+            let customStyles = '';
+            if (diceSet.color_palette && diceSet.color_palette.accent) {
+                // Create a custom style for this specific set
+                customStyles = `style="--dice-label-color: ${diceSet.color_palette.accent};"`;
+            }
+            
             galleryImages += img === "placeholder" ? 
                 '<div class="placeholder-image" style="height: 200px; aspect-ratio: 1/1;"><span>Individual Die Image</span></div>' :
-                `<img src="${img}" alt="Individual die">`;
+                `<div style="position: relative; display: inline-block;" ${customStyles}>
+                    <img src="${img}" alt="Individual die">
+                    ${diceType ? `<div class="dice-type-label">${diceType}</div>` : ''}
+                </div>`;
         });
     }
     

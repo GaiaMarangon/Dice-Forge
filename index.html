@@ -11,6 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Pre-rendered form for Netlify detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+    </form>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -210,7 +216,7 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/form-success.html">
                         <input type="hidden" name="form-name" value="contact" />
                         <p style="display:none;">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>

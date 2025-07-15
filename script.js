@@ -535,16 +535,13 @@ function toggleMobileNav() {
 // Contact form handling
 function handleContactForm(event) {
     // With Netlify Forms, we don't need to handle form submission manually
-    // The form will be automatically processed by Netlify
-    // This function is kept for any client-side validation or UX improvements
+    // We'll remove our custom handling completely to let Netlify handle it
     
-    // We'll show a confirmation message without preventing the default form action
-    // setTimeout is used to ensure the form is submitted to Netlify before showing the alert
-    setTimeout(() => {
-        alert('Greetings, fellow adventurer! Your message has been sent to the forge. The artisan will respond to your quest soon.');
-    }, 100);
+    // We'll just add any client-side validation here if needed in the future
+    // But for now, we won't interfere with the form submission at all
     
-    // Do not preventDefault() as we want Netlify to handle the form submission
+    // Return true to let the form submit normally
+    return true;
 }
 
 // Smooth scrolling for navigation links
@@ -726,7 +723,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up event listeners
     document.querySelector('.hamburger').addEventListener('click', toggleMobileNav);
     document.querySelector('.close').addEventListener('click', closeModal);
-    document.getElementById('contact-form').addEventListener('submit', handleContactForm);
+    // We've removed the form event listener to let Netlify handle the submission
+    // document.getElementById('contact-form').addEventListener('submit', handleContactForm);
     
     // Dynamic title click event listener
     document.getElementById('dynamic-word').addEventListener('click', function() {

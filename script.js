@@ -448,9 +448,16 @@ function openModal(diceSet) {
         containerImages += '</div>';
     }
     
-    const videoSection = diceSet.video === "placeholder" ? 
-        '<div class="modal-video"><div class="placeholder-image" style="height: 220px; aspect-ratio: 1/1; max-width: 220px;"><span>Video Placeholder</span></div></div>' :
-        `<div class="modal-video"><video controls><source src="${diceSet.video}" type="video/mp4">Your browser does not support the video tag.</video></div>`;
+    let videoSection = '';
+    if (diceSet.video && diceSet.video !== "placeholder") {
+        // Verifica se il file video esiste realmente
+        const xhr = new XMLHttpRequest();
+        xhr.open('HEAD', diceSet.video, false);
+        xhr.send();
+        if (xhr.status === 200) {
+            videoSection = `<div class="modal-video"><video controls><source src="${diceSet.video}" type="video/mp4">Your browser does not support the video tag.</video></div>`;
+        }
+    }
     
     modalBody.innerHTML = `
         <h2>${diceSet.name}</h2>
@@ -466,10 +473,7 @@ function openModal(diceSet) {
                     }
                 </div>
             </div>
-            <div>
-                <h3>Showcase Video</h3>
-                ${videoSection}
-            </div>
+            ${videoSection ? `<div><h3>Showcase Video</h3>${videoSection}</div>` : ''}
         </div>
         
         <h4>Individual Dice</h4>

@@ -517,6 +517,131 @@ dice_sets:
       complete_set: "images/sets/verdeSmeraldo/dice.jpg"
     video: "images/sets/verdeSmeraldo/set.mp4"
 
+  - name: "Golem Testament Set"
+    description: "Solid copper-red resin with dark blue shades. In the depths of the Earth, they echo the testament of the ancient sleeping stone guardians."
+    color_palette:
+      primary: "#b87333"
+      secondary: "#1e3a8a"
+      accent: "#cd853f"
+      background: "#fdf2e9"
+      text: "#8b4513"
+      modal_bg: "#fff"
+    features:
+      - "9-piece set"
+      - "Dual Color" 
+      - "Solid red copper (mica powder), crystal dark blue"
+      - "Silver numbers"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    images:
+      main: "images/sets/marroneTerra/dice.jpg"
+      individual: 
+        - "images/sets/marroneTerra/d100.jpg"
+        - "images/sets/marroneTerra/d20.jpg"
+        - "images/sets/marroneTerra/d12.jpg"
+        - "images/sets/marroneTerra/d8.jpg"
+        - "images/sets/marroneTerra/d6.jpg"
+        - "images/sets/marroneTerra/d4_1.jpg"
+        - "images/sets/marroneTerra/d4_2.jpg"
+        - "images/sets/marroneTerra/d4_3.jpg"
+      complete_set: "images/sets/marroneTerra/dice.jpg"
+      container: 
+        - "images/sets/marroneTerra/hexaBox_openDice.jpg"
+        - "images/sets/marroneTerra/hexaBox_openEmpty.jpg"
+        - "images/sets/marroneTerra/hexaBox_closedTop.jpg"
+    video: "images/sets/marroneTerra/set.mp4"
+
+  - name: "Mermaid Amethist Cake Set"
+    description: "Creamy pink and fresh mint dice. Like confections from an underwater palace, these dice tell of the whimsical sweetness of mermaids playing beneath amethyst coral reefs."
+    color_palette:
+      primary: "#ec4899"
+      secondary: "#10d9c4"
+      accent: "#a855f7"
+      background: "#fdf2f8"
+      text: "#be185d"
+      modal_bg: "#fff"
+    features:
+      - "9-piece set"
+      - "Dual Color" 
+      - "Solid pink, crystal mint green"
+      - "Red and green numbers"
+      - "Violet glitters and white details (on top face)"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    images:
+      main: "images/sets/sirena/dice.jpg"
+      individual: 
+        - "images/sets/sirena/d100.jpg"
+        - "images/sets/sirena/d20.jpg"
+        - "images/sets/sirena/d12.jpg"
+        - "images/sets/sirena/d8.jpg"
+        - "images/sets/sirena/d6.jpg"
+        - "images/sets/sirena/d4_1.jpg"
+        - "images/sets/sirena/d4_2.jpg"
+        - "images/sets/sirena/d4_3.jpg"
+      complete_set: "images/sets/sirena/dice.jpg"
+      container: 
+        - "images/sets/sirena/hexaBox_openDice.jpg"
+        - "images/sets/sirena/hexaBox_openEmpty.jpg"
+        - "images/sets/sirena/hexaBox_closedTop.jpg"
+    video: "images/sets/sirena/set.mp4"
+
+  - name: "Dragon Phlegm Set"
+    description: "Solid yellow with silver shades and inclusions. Forged from the breath of ancient dragons, these dice shimmer with the power of their glowing saliva, said to contain traces of molten gold and liquid starlight."
+    color_palette:
+      primary: "#eab308"
+      secondary: "#94a3b8"
+      accent: "#f59e0b"
+      background: "#fffbeb"
+      text: "#92400e"
+      modal_bg: "#fff"
+    features:
+      - "9-piece set"
+      - "Dual Color" 
+      - "Solid yellow, crystal silver (mica powder)"
+      - "Red and green numbers"
+      - "Silver foil inclusions"
+    measurements:
+      - "D20: 20mm diameter"
+      - "D12: 18mm diameter"
+      - "D10/D100: 18mm diameter" 
+      - "D8: 16mm diameter"
+      - "D6: 15mm edge to edge"
+      - "D4 (1): 15mm edge"
+      - "D4 (2): 15mm length"
+      - "D4 (3): 15mm width"
+    images:
+      main: "images/sets/gialli/dice.jpg"
+      individual: 
+        - "images/sets/gialli/d100.jpg"
+        - "images/sets/gialli/d20.jpg"
+        - "images/sets/gialli/d12.jpg"
+        - "images/sets/gialli/d8.jpg"
+        - "images/sets/gialli/d6.jpg"
+        - "images/sets/gialli/d4_1.jpg"
+        - "images/sets/gialli/d4_2.jpg"
+        - "images/sets/gialli/d4_3.jpg"
+      complete_set: "images/sets/gialli/dice.jpg"
+      container: 
+        - "images/sets/gialli/hexaBox_openDice.jpg"
+        - "images/sets/gialli/hexaBox_openEmpty.jpg"
+        - "images/sets/gialli/hexaBox_closedTop.jpg"
+    video: "images/sets/gialli/set.mp4"
+
 # Forge Options Configuration
 forge_options:
   special:

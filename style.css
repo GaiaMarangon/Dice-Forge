@@ -21,6 +21,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -112,10 +113,22 @@ body {
     transition: color 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--accent-color);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--accent-color);
 }
 
 .hamburger {
@@ -230,15 +243,39 @@ body {
     color: inherit;
 }
 
+/* Page Navigation System */
+section {
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+section.active {
+    display: block !important;
+    opacity: 1;
+}
+
+section.active.hero {
+    display: flex !important;
+}
+
+/* Add spacing for navbar on non-hero sections */
+section.active:not(.hero) {
+    padding-top: 100px;
+}
+
 /* Hero Section */
 .hero {
-    min-height: 100vh;
-    display: flex;
+    min-height: calc(100vh - 80px);
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
-    padding: 100px 20px 50px;
+    justify-content: center;
+    padding: 100px 40px 50px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--light-text);
     position: relative;
+    gap: 40px;
 }
 
 .hero::before {
@@ -253,8 +290,8 @@ body {
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 600px;
+    flex: 1 0 300px;
+    max-width: 550px;
     z-index: 1;
 }
 
@@ -365,7 +402,8 @@ body {
 }
 
 .hero-image {
-    flex: 1;
+    flex: 1 0 400px;
+    max-width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -389,9 +427,10 @@ body {
 
 /* Portfolio Section */
 .portfolio {
-    padding: 100px 0;
+    padding: 80px 0;
     background: linear-gradient(135deg, var(--background-color), var(--card-bg));
     position: relative;
+    margin-top: 0;
 }
 
 .portfolio::before {
@@ -519,9 +558,10 @@ body {
 
 /* About Section */
 .about {
-    padding: 100px 0;
+    padding: 80px 0;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--light-text);
+    margin-top: 0;
 }
 
 .about-content {
@@ -547,9 +587,10 @@ body {
 
 /* Contact Section */
 .contact {
-    padding: 100px 0;
+    padding: 80px 0;
     background: linear-gradient(135deg, var(--background-color), var(--card-bg));
     position: relative;
+    margin-top: 0;
 }
 
 .contact::before {
@@ -905,9 +946,10 @@ footer {
 
 /* Forge Section */
 .forge {
-    padding: 100px 0;
+    padding: 80px 0;
     background: linear-gradient(135deg, var(--background-color), var(--card-bg));
     position: relative;
+    margin-top: 0;
 }
 
 .forge::before {
@@ -1228,6 +1270,18 @@ footer {
         flex-direction: column;
         text-align: center;
         padding: 120px 20px 50px;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .hero-image {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-top: 1rem;
     }
 
     .hero h1 {
@@ -1237,10 +1291,6 @@ footer {
     .title-dynamic {
         font-size: 1.3em;
         letter-spacing: 1px;
-    }
-
-    .hero-image {
-        margin-top: 2rem;
     }
 
     .about-content,

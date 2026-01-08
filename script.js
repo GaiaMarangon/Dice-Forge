@@ -47,6 +47,16 @@ async function loadConfiguration() {
     }
 }
 
+// Helper function to capitalize container type for display
+// Converts 'coffer', 'long box', 'pouch' to 'Coffer', 'Long Box', 'Pouch'
+function capitalizeContainerType(containerType) {
+    if (!containerType) return 'Container';
+    return containerType
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
+}
+
 // Fallback data if YAML loading fails
 function loadFallbackData() {
     siteConfig = {
@@ -502,7 +512,7 @@ function openModal(diceSet) {
 
             ${diceSet.container_measurements ? `
             <div style="flex: 1; min-width: 250px;">
-                <h4>${diceSet.container_type === 'coffer' ? 'Coffer Measurements' : 'Long Box Measurements'}</h4>
+                <h4>${capitalizeContainerType(diceSet.container_type)} Measurements</h4>
                 <ul style="margin-top: 1rem;">
                     ${diceSet.container_measurements.map(measurement => `<li>${measurement}</li>`).join('')}
                 </ul>
@@ -546,6 +556,30 @@ function handleContactForm(event) {
     
     // Return true to let the form submit normally
     return true;
+}
+
+// Page Navigation System
+function showPage(pageId) {
+    // Hide all sections
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Show the selected page
+    const page = document.querySelector(pageId);
+    if (page) {
+        page.classList.add('active');
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+    
+    // Update active nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === pageId) {
+            link.classList.add('active');
+        }
+    });
 }
 
 // Smooth scrolling for navigation links
@@ -757,7 +791,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(event) {
             event.preventDefault();
             const target = this.getAttribute('href');
-            smoothScroll(target);
+            showPage(target);
             
             // Close mobile menu if open
             document.querySelector('.nav-menu').classList.remove('active');
@@ -765,11 +799,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Smooth scrolling for CTA button
-    document.querySelector('.cta-button').addEventListener('click', function(event) {
-        event.preventDefault();
-        smoothScroll('#portfolio');
-    });
+    // CTA buttons navigation
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            showPage('#portfolio');
+        });
+    }
+    
+    const forgeContactButton = document.querySelector('.forge-contact-button');
+    if (forgeContactButton) {
+        forgeContactButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            showPage('#contact');
+        });
+    }
     
     // Navbar background on scroll
     window.addEventListener('scroll', function() {

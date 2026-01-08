@@ -496,7 +496,7 @@ dice_sets:
     video: "images/sets/onice/set.mp4"
 
   - name: "Crystalline Shore Set"
-    description: ""
+    description: "Transparent azure over a golden layer. Crystal-clear waters and paradisiacal sands bless your rolls... Will it suffice to appease the grim creatures lurking in the depths?"
     color_palette:
       primary: "#0891b2"
       secondary: "#cffafe"
@@ -809,7 +809,7 @@ dice_sets:
     video: "images/sets/teschi/set.mp4"
 
   - name: "Bronze Foliage Set"
-    description: ""
+    description: "As you clench these dice, the scent of damp autumn soil fills your nostrils. Dig your fingers into the soft earth to draw luck, and roll."
     color_palette:
       primary: "#b87333"
       secondary: "#d2691e"
@@ -855,7 +855,7 @@ dice_sets:
     video: "images/sets/liquidoBronzo/set.mp4"
 
   - name: "Golden Foliage Set"
-    description: ""
+    description: "Radiant gold crowns the trees in the garden of the gods. In an autumn that tastes of spring, butterflies embedded in blonde foliage proclaim the nobility and wealth of these divine places."
     color_palette:
       primary: "#d4af37"
       secondary: "#ffd700"
@@ -893,7 +893,7 @@ dice_sets:
     video: "images/sets/liquidoOro/set.mp4"
 
   - name: "Marine Foliage Set"
-    description: ""
+    description: "Placid and silent is the whisper of seaweed, an invitation to meditation and prayer... Not without an auspicious flicker of bioluminescence."
     color_palette:
       primary: "#f5f5f5"
       secondary: "#22c55e"
@@ -931,7 +931,7 @@ dice_sets:
     video: "images/sets/liquidoBianco/set.mp4"
 
   - name: "Fading Fairy Set"
-    description: ""
+    description: "A serene shadow hovers in the air, an almost imperceptible sparkle. Enchanted traces of an elusive memory, a déjà vu, a vague call from ethereal worlds above the moon. In these dice, magical dust whispers of fortune from the other side of the veil."
     color_palette:
       primary: "#a78bfa"
       secondary: "#e9d5ff"
@@ -976,7 +976,7 @@ dice_sets:
     video: "images/sets/violaTrasparenti/set.mp4"
 
   - name: "Galactic Enchantress Set"
-    description: ""
+    description: "A magnetic attraction bursts forth from these dice, where golden stardust captivates the deep purple of interstellar space. It is the irresistible force of the enchantress of the galaxies. Will you be able to unleash it in your charisma rolls?"
     color_palette:
       primary: "#a78bfa"
       secondary: "#d4af37"
@@ -1020,7 +1020,7 @@ dice_sets:
     video: "images/sets/goldenGalaxy/set.mp4"
 
   - name: "Candy Peach Dawn Set"
-    description: ""
+    description: "Delicate and sugary, these dice sweeten the nuances of dawn, from light and juicy peach to fragrant and playful deep ripe pink. Will your foes accept candy from strangers?"
     color_palette:
       primary: "#fbbf24"
       secondary: "#f472b6"
@@ -1064,7 +1064,7 @@ dice_sets:
     video: "images/sets/alba/set.mp4"
 
   - name: "Frosted Pine Set"
-    description: ""
+    description: "In the deep green of scented pine needles, a glacial clink bursts forth, a motionless tumult of prickly snow garlands. Freeze your opponents with a sparkling throw of evergreen infallibility."
     color_palette:
       primary: "#10b981"
       secondary: "#d1fae5"
@@ -1101,7 +1101,7 @@ dice_sets:
     video: "images/sets/verdeFestone/set.mp4"
 
   - name: "Winter Palace Set"
-    description: ""
+    description: "A golden glow blooms from the lavish halls of a palace in celebration. Join in the festivities on the eve of a grand event, and show off your most valuable shots."
     color_palette:
       primary: "#f5f5f5"
       secondary: "#22c55e"
@@ -1139,7 +1139,7 @@ dice_sets:
     video: "images/sets/liquidoSchiaccianoci/set.mp4"
 
   - name: "Waltz of the Snowflakes Set"
-    description: ""
+    description: "Mesmerizing snowy fractals enchant the unwary traveler, dancing lightly in soft swirls. Will you manage not to get caught up in the endless dance of an eternal winter?"
     color_palette:
       primary: "#f5f5f5"
       secondary: "#0ea5e9"
@@ -1177,7 +1177,7 @@ dice_sets:
     video: "images/sets/liquidoNeve/set.mp4"
 
   - name: "Gift for Kingship Set"
-    description: ""
+    description: "The wise men brought gifts of gold. Nobility, power, and wealth, to manifest your kingship and accompany your most honorable rolls."
     color_palette:
       primary: "#1f2937"
       secondary: "#d4af37"
@@ -1214,7 +1214,7 @@ dice_sets:
     video: "images/sets/layeredNeroOro/set.mp4"
 
   - name: "Gift for Divinity Set"
-    description: ""
+    description: "The wise men brought gifts of frankincense. Intelligence, richness of spirit, prayer, to manifest your divinity and accompany your most sacred rolls."
     color_palette:
       primary: "#3b82f6"
       secondary: "#dbeafe"
@@ -1251,7 +1251,7 @@ dice_sets:
     video: "images/sets/layeredBluArgento/set.mp4"
 
   - name: "Gift for Humanity Set"
-    description: ""
+    description: "The wise men brought gifts of myrrh. Compassion, self-sacrifice, healingness, to manifest your humanity and accompany your most altruistic rolls."
     color_palette:
       primary: "#10b981"
       secondary: "#d1fae5"
